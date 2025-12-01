@@ -1,0 +1,7 @@
+/* Modern CSS Reset, so it looks the same everywhere no matter what browser */
+* {​
+border: 0;​
+margin: 0;​
+padding: 0;​
+}
+/* End of CSS Reset */
