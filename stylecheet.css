@@ -5,3 +5,78 @@ margin: 0;​
 padding: 0;​
 }
 /* End of CSS Reset */
+
+
+/* === GENERAL NAVBAR STYLING === */
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #78a8cc;   /* light blue background */
+    padding: 10px 25px;
+    border-radius: 40px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* LOGO */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0d2a4d;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Tilmeld button styling */
+.nav-links li:last-child a {
+    background-color: white;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+/* === RESPONSIVE NAVIGATION === */
+@media (max-width: 700px) {
+
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .nav-links li:last-child a {
+        align-self: flex-start;
+    }
+}
