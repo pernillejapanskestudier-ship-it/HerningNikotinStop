@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <!--It ensures the webpage can correctly display almost all characters(Most common)-->
+    <!--Det sikre en at webpage kan korrekt vise næsten alle 'karaktere'(bogstaver (de mest brugte) så som Æ, Ø, Å)-->
     <meta charset="UTF-8">
-    <!--This disallows bots to access the webstie, as well as the extern robots.txt document-->
+    <!--Dette gør at robotter/agenter ikke lader søgemaskiner tillgå hjemmesiden-->
     <meta name="robots" content="noindex">
-    <!--how webpage appears on mobile devices; so that it's not just a pc screen on a mobile-->
+    <!--Hvordan en hjemmeside fremgår på en mobil; så det ikke bare er en computerskærm på en mobil-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 
     <!--where the html gets it's 'make up' uwu-->
     <ref rel="stylesheet" href="stylecheet.css">
 
+    <!--Bootstrap version 5.3.8-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+
 </head>
 <body>
     
-    <navigation>
-        <logo>
-            <img src="Images/" alt="Logo">
-        <ul>
-            <li><a href="Index.html">Unge deler</a></li>
-            <li><a href="OmOs.html">Test dig selv</a></li>
-            <li><a href="Produkter.html">Læs mere</a></li>
-            <li><a href="Kontakt.html">Tilmelding</a></li>
-        </ul>
-    
+   <nav class="topnav">
+    <div class="logo">
+        <a href="Index.html">
+            <img src="Images/hk_logo_bred_neg-ved-siden-af-logo.png" alt="HK Logo">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Ungedeler.html">Unge deler</a></li>
+        <li><a href="OmOs.html">Test dig selv</a></li>
+        <li><a href="Produkter.html">Læs mere</a></li>
+        <li><a href="Kontakt.html">Tilmelding</a></li>
+    </ul>
+</nav>
+
+    <h1>Har du overvejet nikotin stop?</h1>
+
+    <footer>
+        <p></p>
+    </footer>
+
 </body>
 </html>
