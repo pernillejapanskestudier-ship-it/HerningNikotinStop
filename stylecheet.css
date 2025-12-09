@@ -6,77 +6,135 @@ padding: 0;​
 }
 /* End of CSS Reset */
 
+/* ===== CSS RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-/* === GENERAL NAVBAR STYLING === */
+/* ===== NAVIGATION BAR (DESKTOP) ===== */
 .topnav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #78a8cc;   /* light blue background */
-    padding: 10px 25px;
+
+    background-color: #7eb0d1;
+    padding: 12px 30px;
     border-radius: 40px;
-    max-width: 1000px;
+
+    max-width: 1200px;
     margin: 20px auto;
+
+    backdrop-filter: blur(5px);
 }
 
-/* LOGO */
+/* Logo */
 .logo img {
-    height: 40px;
+    height: 45px;
     width: auto;
     display: block;
 }
 
-/* NAV LINKS */
+/* Navigation links (desktop) */
 .nav-links {
     display: flex;
-    gap: 40px;
+    align-items: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 60px;
 }
 
+/* Regular links */
 .nav-links a {
     text-decoration: none;
-    color: #0d2a4d;
-    font-weight: 600;
+    color: #0b2d4d;
+    font-weight: 700;
     font-size: 18px;
     transition: 0.2s ease;
 }
 
-/* Hover effect */
 .nav-links a:hover {
     opacity: 0.6;
 }
 
-/* Tilmeld button styling */
+/* Tilmelding button */
 .nav-links li:last-child a {
     background-color: white;
-    padding: 8px 18px;
+    color: #0b2d4d;
+    padding: 8px 22px;
     border-radius: 12px;
-    font-weight: 700;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+    display: inline-block;
 }
 
-/* === RESPONSIVE NAVIGATION === */
-@media (max-width: 700px) {
 
+/* ===== HAMBURGER MENU ===== */
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #0b2d4d;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 800px) {
+
+    /* Topnav becomes horizontal again (logo left, hamburger right) */
     .topnav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 0;
         width: 100%;
     }
 
-    .nav-links a {
-        font-size: 20px;
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
     }
 
-    .nav-links li:last-child a {
-        align-self: flex-start;
+    /* Dropdown menu hidden by default */
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        display: none;
+        margin-top: 20px;
+    }
+
+    /* Reveal menu when checkbox checked */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Animated hamburger → X */
+    #menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
     }
 }
