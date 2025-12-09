@@ -9,6 +9,11 @@ font-family: Arial, Helvetica, sans-serif;
 /* End of CSS Reset */
 
 /* ===== GLOBAL STYLES ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
+}
+
 p {
     font-family:  Jakarta Sans, sans-serif;
     color: #004076;
