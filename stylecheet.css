@@ -25,6 +25,11 @@ body {
 
 /* Navbar styles */
 
+img.logo {
+    height: 10%;
+    width: auto;
+}
+
 .navbar {
     position: sticky;
     top: 0;
