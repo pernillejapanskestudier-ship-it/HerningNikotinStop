@@ -1,0 +1,26 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-align: center;
+  padding-top: 40px;
+  background: #ffffff;
+  color: rgb(15, 7, 44);
+
+}
+
+.stats p {
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.game-container {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#smoker {
+  width: 300px;
+  cursor: pointer;
+  user-select: none;
+  border: 0px solid rgb(7, 9, 70);
+  border-radius: 10px;
+}
