@@ -2,8 +2,8 @@ let clickCount = 0;
 let cigarettesSmoked = 0;
 let moneySpent = 0;
 
-// Set the price per cigarette
-const pricePerCig = 3.15;  // change this to whatever you want
+// prisen per cigaret
+const pricePerCig = 3.15;  // man kan ændre dette til den ønskede pris
 
 // Image frames
 const frames = ["Images/frame1.png", "Images/frame2.png", "Images/frame3.png"];

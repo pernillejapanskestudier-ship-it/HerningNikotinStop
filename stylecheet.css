@@ -254,7 +254,7 @@ button:hover {
 }
 
 
-/* Game styles */
+/* Cigarette Game styles */
 
 .nikotinmanden {
   width: 50%;
@@ -279,4 +279,40 @@ button:hover {
   user-select: none;
   border: 0px solid rgb(7, 9, 70);
   border-radius: 10px;
+}
+/* End of Cigarette Game styles */
+
+
+/* Quiz styles */
+#quiz {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d3e6f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(198, 222, 60, 0.2);
+}
+
+#question {
+  margin-bottom: 20px;
+}
+
+#options {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #004076;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c4e0fb;
 }
