@@ -67,7 +67,7 @@ body {
 
 /* --- Tilmeld-knappen --- */
 .tilmeld-btn {
-    background-color: white;
+    background-color: #F0F0F1;
     padding: 6px 18px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -77,11 +77,11 @@ body {
 }
 
 .tilmeld-btn:hover {
-    background-color: #dcecff;
+    background-color: #c4e0fb;
 }
 
-
 /* Navnbar style end */
+
 
 /* ===== FORMULAR STYLES ===== */
 
@@ -92,7 +92,7 @@ h1 {
     margin-top: 50px; 
 }
 
-/* Baggrund */
+/* Baggrund på sitet */
 body {
     background-color: #F0F0F1; /* lys blå som billedet */
     font-family: Arial, sans-serif;
@@ -120,7 +120,7 @@ form {
 
 
 
-/* Labels */
+/* Orderne i formularen */
 label {
     font-weight: bold;
     color: #003665;
@@ -129,8 +129,8 @@ label {
 
 /* Input felter */
 input, select {
-    background-color: #a9d0f7;
-    border: 3px solid #8abde3;
+    background-color: #F0F0F1;
+    border: 3px solid #aec6ed;
     padding: 2.5px;
     margin-top: 5px;
     border-radius: 10px;
@@ -151,7 +151,7 @@ select {
     background-color: #d3e6f9;
 }
 
-/* To felter ved siden af hinanden */
+/* De to knapper i bunden af hvert site */
 .row {
     display: flex;
     gap: 15px;
@@ -163,8 +163,8 @@ select {
 
 /* Knap */
 button {
-    background-color: #a9d0f7;
-    border: 3px solid #8abde3;
+    background-color: #F0F0F1;
+    border: 3px solid #003665;
     padding: 12px;
     border-radius: 10px;
     font-size: 18px;
@@ -189,7 +189,7 @@ button:hover {
     padding: 12px 40px;
     border: 3px solid #003665;  /* Mørk blå kant */
     border-radius: 50px;        /* Gør formen rund */
-    background-color: #f2f3f5;  /* Lys grå baggrund */
+    background-color: #F0F0F1;  /* Lys grå baggrund */
     color: #003665;             /* Mørk blå tekst */
     font-weight: bold;
     font-style: italic;
@@ -201,7 +201,7 @@ button:hover {
 
 /* Hover-effekt (kan fjernes hvis du ikke vil have den) */
 .pill-button:hover {
-    background-color: #e8eef5;
+    background-color: #c4e0fb;
 }
 
 
