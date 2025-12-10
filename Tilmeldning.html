@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilmeldingsformular</title>
+
+    <link rel="stylesheet" href="stylecheet.css">
+
+    <style>
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Så den ligger over alt andet */
+    background-color: rgba(160, 209, 251, 0.85);
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Lille skygge så den står pænt fast */
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: rgb(240, 240, 241);
+        }
+        form {
+            background-color: rgb(232, 241, 255);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid rgb(160, 209, 251);
+            box-sizing: border-box;
+        }
+       button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(160, 209, 251, 1); /* Korrekt syntaks */
+    color: #004076;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(120, 180, 230, 1); /* Lidt mørkere blå ved hover */
+}
+
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Start af navigation -->
+<nav class="navbar">
+    <!-- Logo til venstre -->
+    <div class="logo">
+        <a href="Index.html">
+            <img src="Images/hk_logo_bred_neg-ved-siden-af-logo.png" alt="HK Logo">
+        </a>
+    </div>
+
+    <!-- Navigation links til højre -->
+    <ul class="nav-links">
+        <li><a href="Ungedeler.html">Unge deler</a></li>
+        <li><a href="Raekud.html">Ræk ud</a></li>
+        <li><a href="Testdigselv.html">Test dig selv</a></li>
+        <li><a href="Laesmere.html">Læs mere</a></li>
+        <li><a href="Tilmelding.html" class="tilmeld-btn">Tilmeld</a></li>
+    </ul>
+</nav>
+<!-- Slut af navigation -->
+
+
+<form action="/submit" method="post">
+    <label for="firstname">Fornavn:</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Indtast dit fornavn" required>
+
+    <label for="lastname">Efternavn:</label>
+    <input type="text" id="lastname" name="lastname" placeholder="Indtast dit efternavn" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Indtast din email" required>
+
+    <label for="zipcode">Postnummer:</label>
+    <input type="text" id="zipcode" name="zipcode" placeholder="Indtast dit postnummer" required>
+
+    <label for="city">By:</label>
+    <input type="text" id="city" name="city" placeholder="Indtast din by" required>
+
+    <label for="address">Adresse:</label>
+    <input type="text" id="address" name="address" placeholder="Indtast din adresse" required>
+
+    <label for="phone">Telefonnummer:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Indtast dit telefonnummer" required>
+
+    <button type="submit">Tilmeld</button>
+</form>
+
+</body>
+</html>
