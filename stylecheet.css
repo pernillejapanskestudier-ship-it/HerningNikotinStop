@@ -23,7 +23,7 @@ body {
     color: #F0F0F1;
 }
 
-/* Navbar styles Tilmeld */
+/* Navigationsbaren */
 
 .navbar {
     position: sticky;
@@ -36,9 +36,8 @@ body {
     padding: 10px 25px;
     border-radius: 50px;        
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-
-    font-family:  Jakarta Sans, sans-serif;
-    color: #004076;
+    opacity: 0.95;
+   
 }
 
 /* --- LOGO --- */
@@ -51,14 +50,18 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px;  /* Rigeligt mellemrum som i eksemplet */
+    gap: 140px;  /* Rigeligt mellemrum som i eksemplet */
     margin: 0;
     padding: 0;
+    width: 70%;
+    align-content: center;
+     font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #003665;             /* Mørk blå */
+    color: #004076;             /* Mørk blå */
     font-weight: bold;
     font-style: italic;         /* Ligner præcis som på billedet */
     font-size: 20px;
@@ -70,7 +73,7 @@ body {
     padding: 6px 18px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    border: 2px solid #003665;
+    border: 2px solid #004076;
 
     transition: 0.2s;
 }
@@ -86,7 +89,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #003665;
+    color: #004076;
     margin-bottom: 60px;
     margin-top: 60px; 
     padding-top: 20px;
@@ -124,7 +127,7 @@ form {
 /* Orderne i formularen */
 label {
     font-weight: bold;
-    color: #003665;
+    color: #004076;
     margin-left: 5px;
 }
 
@@ -136,7 +139,7 @@ input, select {
     margin-top: 5px;
     border-radius: 10px;
     font-size: 16px;
-    color: #003665;
+    color: #004076;
     outline: 2px solid transparent;
     width: 100%;
     align-content: center;
@@ -165,12 +168,12 @@ select {
 /* Knap */
 button {
     background-color: #F0F0F1;
-    border: 3px solid #003665;
+    border: 3px solid #004076;
     padding: 12px;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
-    color: #003665;
+    color: #004076;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -189,14 +192,13 @@ button:hover {
 
 .pill-button {
     padding: 12px 40px;
-    border: 3px solid #003665;  /* Mørk blå kant */
+    border: 3px solid #004076;  /* Mørk blå kant */
     border-radius: 50px;        /* Gør formen rund */
     background-color: #F0F0F1;  /* Lys grå baggrund */
-    color: #003665;             /* Mørk blå tekst */
+    color: #004076;             /* Mørk blå tekst */
     font-weight: bold;
     font-style: italic;
     font-size: 20px;
-    text-decoration: none;
     display: inline-block;
     transition: 0.2s;
 }
