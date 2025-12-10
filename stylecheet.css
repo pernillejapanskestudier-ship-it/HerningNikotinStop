@@ -1,10 +1,10 @@
-/* Modern CSS Reset, so it looks the same everywhere no matter what browser */
-* {​
-border: 0;​
-margin: 0;​
-padding: 0;​
-box-sizing: border-box;
-font-family: Arial, Helvetica, sans-serif;
+/* Moderne CSS Reset, så det ser ens ud over alt uanset browser anvendt */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* End of CSS Reset */
 
@@ -29,7 +29,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #a9d0f7;
+    background-color: #98CDFB;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,6 +38,45 @@ body {
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     opacity: 0.95;
    
+}
+
+/* --- DROPDOWN MENU --- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content hidden by default */
+.dropdown-content {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #98CDFB;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001; /* Sørger for at dropdown er over andre elementer */
+}
+
+/* Dropdown links */
+.dropdown-content li {
+    padding: 10px 15px;  /*tilføjet padding for bedre klik-område */
+    margin: 0;     /* fjernet margin for at undgå ekstra mellemrum */
+}
+
+.dropdown-content li a {
+    display: block;
+    text-decoration: none;
+    color: #004076;
+}
+
+/* Viser dropdown når man hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* --- LOGO --- */
@@ -50,10 +89,10 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 140px;  /* Rigeligt mellemrum som i eksemplet */
+    gap: 30px;  /* Rigeligt mellemrum som i eksemplet */
     margin: 0;
     padding: 0;
-    width: 70%;
+    width: auto;
     align-content: center;
      font-family:  Jakarta Sans, sans-serif;
     color: #004076;
@@ -203,7 +242,7 @@ button:hover {
     transition: 0.2s;
 }
 
-/* Hover-effekt (kan fjernes hvis du ikke vil have den) */
+/* Hover-effekt */
 .pill-button:hover {
     background-color: #c4e0fb;
 }
