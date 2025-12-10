@@ -212,3 +212,32 @@ button:hover {
 /* Card unge deler */
 .card-body {
     color: #e8f1ff;
+}
+
+
+/* Game styles */
+
+.nikotinmanden {
+  width: 50%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+}
+
+.stats p {
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.game-container {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#smoker {
+  width: 300px;
+  cursor: pointer;
+  user-select: none;
+  border: 0px solid rgb(7, 9, 70);
+  border-radius: 10px;
+}
