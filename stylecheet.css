@@ -102,7 +102,14 @@ body {
 .form-container {
     max-width: 600px;
     margin: 30px auto;
+    background-color: #E8F1FF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    align-content: center;
+    width: 100%;
 }
+
 
 /* Selve formularen */
 form {
@@ -110,6 +117,8 @@ form {
     flex-direction: column;
     gap: 10px;
 }
+
+
 
 /* Labels */
 label {
@@ -122,12 +131,14 @@ label {
 input, select {
     background-color: #a9d0f7;
     border: 3px solid #8abde3;
-    padding: 12px;
+    padding: 2.5px;
+    margin-top: 5px;
     border-radius: 10px;
     font-size: 16px;
     color: #003665;
     outline: 2px solid transparent;
     width: 100%;
+    align-content: center;
 }
 
 /* Dropdown pil */
@@ -167,7 +178,33 @@ button:hover {
     background-color: #c4e0fb;
 }
 
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;             /* Afstand mellem knapper */
+    margin: 40px 0;
+}
+
+.pill-button {
+    padding: 12px 40px;
+    border: 3px solid #003665;  /* Mørk blå kant */
+    border-radius: 50px;        /* Gør formen rund */
+    background-color: #f2f3f5;  /* Lys grå baggrund */
+    color: #003665;             /* Mørk blå tekst */
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+/* Hover-effekt (kan fjernes hvis du ikke vil have den) */
+.pill-button:hover {
+    background-color: #e8eef5;
+}
+
+
 /* Card unge deler */
 .card-body {
     color: #e8f1ff;
-}
