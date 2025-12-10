@@ -23,7 +23,7 @@ body {
     color: #F0F0F1;
 }
 
-/* Navbar styles */
+/* Navbar styles Tilmeld */
 
 .navbar {
     position: sticky;
@@ -82,3 +82,92 @@ body {
 
 
 /* Navnbar style end */
+
+/* ===== FORMULAR STYLES ===== */
+
+h1 {
+    text-align: center;
+    color: #003665;
+    margin-bottom: 50px;
+    margin-top: 50px; 
+}
+
+/* Baggrund */
+body {
+    background-color: #F0F0F1; /* lys blå som billedet */
+    font-family: Arial, sans-serif;
+}
+
+/* Formularens container */
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Selve formularen */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: #003665;
+    margin-left: 5px;
+}
+
+/* Input felter */
+input, select {
+    background-color: #a9d0f7;
+    border: 3px solid #8abde3;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #003665;
+    outline: 2px solid transparent;
+    width: 100%;
+}
+
+/* Dropdown pil */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+    background-color: #d3e6f9;
+}
+
+/* To felter ved siden af hinanden */
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.half {
+    flex: 1;
+}
+
+/* Knap */
+button {
+    background-color: #a9d0f7;
+    border: 3px solid #8abde3;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #003665;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #c4e0fb;
+}
+
+/* Card unge deler */
+.card-body {
+    color: #e8f1ff;
+}
