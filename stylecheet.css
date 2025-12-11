@@ -62,7 +62,6 @@ body {
     border-radius: 50px;        
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     opacity: 0.95;
-   
 }
 
 /* --- DROPDOWN MENU --- */
@@ -114,10 +113,10 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;  /* Rigeligt mellemrum som i eksemplet */
+    justify-content: space-evenly;
+    flex: 1;
     margin: 0;
     padding: 0;
-    width: auto;
     align-content: center;
      font-family:  Jakarta Sans, sans-serif;
     color: #004076;
