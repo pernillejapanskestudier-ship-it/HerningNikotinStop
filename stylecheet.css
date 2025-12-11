@@ -105,8 +105,9 @@ body {
 
 /* --- LOGO --- */
 .logo img {
-    height: 45px;  /* Matcher højden på billedet */
+    height: 60px;  /* Matcher højden på billedet */
     width: auto;
+    padding-top: 5%;
 }
 
 /* --- MENUPUNKTERNE --- */
