@@ -146,8 +146,34 @@ body {
     background-color: #c4e0fb;
 }
 
-/* Navnbar style end */
+/* Navigationsbar style end */
 
+/* Forsidens to sektioner hvor der er billed & teskt */
+.aabne-tekst {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.indhold {
+    display: flex;
+    flex-direction: column; /*gør at teksten står under hinanden*/
+    gap: 12px;
+    max-width: 400px; 
+}
+.mini-heroes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #E8F1FF;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    padding: 8px;
+}
+#PigeDerRyger, #DudeMedGruppe { /* dette er selve billederne uden deres container */
+    width: 250px;
+    height: auto;
+    border-radius: 40px;
+}
 
 /* ===== FORMULAR STYLES ===== */
 
@@ -414,12 +440,20 @@ button:hover {
     cursor: pointer;
     text-decoration: none;
 }
+/* Ungedeler Kort styles slut*/
+
 .icon-wrapper {
     display: flex;
     justify-content: center; /* horizontal center */
     align-items: center;     /* vertical center */
 }
 .facebook-icon {
+    fill: #004076;
+    margin: 0 auto 12px auto;
+    cursor: pointer;
+    display: block;
+}
+.instagram-icon {
     fill: #004076;
     margin: 0 auto 12px auto;
     cursor: pointer;

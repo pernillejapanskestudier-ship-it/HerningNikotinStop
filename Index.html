@@ -55,11 +55,12 @@
     <h1 id="Hero-title">Har du overvejet nikotin stop?</h1>
 </div>
 
-<div class="aabne-tekst a">
-    <div>
-    <img src="Images/GirlSmokingWow.webp" alt="En pige med et eftertænktsomt blik med en smøg i hånden">
+<div class="aabne-tekst">
+    <div class="mini-heroes">
+    <img id="PigeDerRyger" src="Images/GirlSmokingWow.webp" alt="En pige med et eftertænktsomt blik med en smøg i hånden">
     </div>
 
+    <div class="indhold">
     <h3>Hvordan tilbringer  du din hverdag?</h3>
 
     <p>Nikotinen passer ind i alle sammenhæng og er blevet en naturlig del af samfundet som noget man selv skal vælge til eller fra.</p>
@@ -67,13 +68,16 @@
     <p>
 Men er det stadig et valg du føler du har? Afhængighed kan nemt blive del af os. Og hvis du føler det kunne være interessant at se hvordan man engang stopper igen kan du finde svarende her.</p>
 </div>
+</div>
 
 
-<div class="aabne-tekst b">
-<div>
-    <img src="Images/SoUmm.webp" alt="En gruppe drenge der går sammen og ryger">
+
+<div class="aabne-tekst">
+<div class="mini-heroes">
+    <img id="DudeMedGruppe" src="Images/SoUmm.webp" alt="En gruppe drenge der går sammen og ryger">
     </div>
 
+<div class="indhold">
 <h3>Hvad prioterer du?</h3>
 
 <p>"Vi tog nogle gange ikke op til mine bedste forældre da det ville ende med at vi lugtede for meget af røg."</p> 
@@ -84,34 +88,66 @@ Men er det stadig et valg du føler du har? Afhængighed kan nemt blive del af o
 "Mig og min mor snakker nogle gange skævt med hinanden, men hun bliver vred på mig når jeg går ud og ryger inden vi spiser aftensmad sammen..."
 Nikotinen du indtager er dit valg, men dem som står dig nær ønsker kun det bedste for dig, og det gør vi også. Nikotinen er en del af livet som vi alle har mødt/oplevet, men hvis du ønsker det ikke skal være en del af dig og dit liv mere hjælper vi dig gerne.</p>
 </div>
+</div>
+<!--slut på intro tekster/mini heroes-->
 
+<!--call to action :D-->
+<h1>Læs mere om kursus eller tilmeld dig</h1>
 
-<h2>Læs mere om kursus
-Eller tilmeld dig med det samme
-Du er ikke alene</h2>
+<!-- Two buttons for navigation -->
+<div class="button-row">
+    <a href="Laesmere.html" class="pill-button">Læs mere</a>
+    <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
+</div>
 
-<button><a href="Laesmere.html">Læs mere</a></button>
-<button id="Tilmeld-But"><a href="Tilmelding.html">Tilmeld</a></button>
+<!--footer-->
+<footer style="background-color: #a9d0f7; color: #004076; padding: 40px 0;">
+    <!-- Inner container with centered flexbox layout -->
+    <div style="
+        max-width: 1000px; 
+        margin: 0 auto; /* Centers the footer horizontally */
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap;
+        gap: 50px;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 20px; /* Small padding on sides for mobile devices */
+    ">
+        
+        <!-- Footer section: Navigation links -->
+        <div>
+            <h3 style="color: #004076; margin-bottom: 10px;">Under sider</h3>
+            <p>Unge deler</p>
+            <p>Læs mere</p>
+            <p>Ræk ud</p>
+        </div>
 
-<footer>
-    <div class="logo-big">
-        <img src="Images/Images/hk_byvaaben_neg-uden-tekst.png.png" alt="HK Logo">
-    </div>
+        <!-- Footer section: Contact information -->
+        <div>
+            <h3 style="color: #004076; margin-bottom: 10px;">Herning Kommune</h3>
+            <p>Torvet 5</p>
+            <p>7400 Herning</p>
+            <p>CVR: 29 18 99 19</p>
+            <p>Kontakt kommunen – 96 28 28 28</p>
+        </div>
 
-    <p>Herning kommune</p>  
-    <p>Torvet 5, 7400 Herning
-    CVR: 29 18 99 19
-    Kontakt kommunen - 96 28 28 28</p>
-
-    <!--Facebook Icon-->
+        <!-- Footer section: Icons-->
+        <div>
+            <h3 style="color: #004076; margin-bottom: 10px;">Find os her</h3>
+            <!--Facebook Icon-->
     <div class="Icon-wrapper">
 <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 30 30">
     <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
 </svg>
 </div>
-    <!--Instagram Icon-->
-    
-     </footer>
-    
+            <!-- Instagram -->
+            <div class="Icon-wrapper">
+<link type="image/png" sizes="32x32" rel="icon" href=".../icons8-instagram-ios7-32.png">
+</div>
+
+</div>
+</footer>
+<!--footer slut :)-->    
 </body>
 </html>
