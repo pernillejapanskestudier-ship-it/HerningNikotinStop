@@ -149,6 +149,13 @@ body {
 /* Navigationsbar style end */
 
 /* Forsidens to sektioner hvor der er billed & teskt */
+#mini-heroes-container {
+    flex-direction: column; /* Gør at billedet kommer før teksten */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
 .aabne-tekst {
     display: flex;
     align-items: center;
