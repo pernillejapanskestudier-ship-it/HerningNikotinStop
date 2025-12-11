@@ -461,7 +461,25 @@ button:hover {
 }
 
 /* Footer container - ensures centered content */
-footer > div {
+footer {
     max-width: 100%;
-    margin: 0 auto !important;
+    color: #004076; 
+    padding: 40px 0;
+    background-color: #a9d0f7;
+    width: 100%;
+}
+#footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 20px;
+}
+.footer-title {
+    color: #004076; 
+    margin-bottom: 10px;
 }
