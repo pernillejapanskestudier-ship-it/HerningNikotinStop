@@ -19,6 +19,7 @@
 <body>
 
 <!-- Navigation bar at the top of the page -->
+<!--navigationsbar start-->
 <nav class="navbar">
     <div class="logo">
         <a href="Index.html">
@@ -28,12 +29,30 @@
 
     <!-- Navigation menu links -->
     <ul class="nav-links">
-        <li><a href="Ungedeler.html">Unge deler</a></li>
+        
+        <li class="dropdown">
+            <a href="Ungedeler.html">Unge deler</a>
+            <ul class="dropdown-content">
+                <li><a href="Ungedeler.html#Personlige_historier">Personlige historier</a></li>
+                <li><a href="Ungedeler.html#Moter_andre">Mød andre</a></li>
+            </ul>
+        </li>
+
         <li><a href="Raekud.html">Ræk ud</a></li>
-        <li><a href="Laesmere.html">Læs mere</a></li>
-        <li><a href="Tilmelding.html" class="tilmeld-btn">Tilmeld</a></li>
+
+        <li><a href="Testdigselv.html">Test dig selv!</a></li>
+            
+        <li class="dropdown">
+            <a href="Laesmere.html">Læs mere</a>
+            <ul class="dropdown-content">
+                <li><a href="Laesmere.html#Fun_facts">Fun facts</a></li>
+            </ul>
+        </li>
+
+        <li><a href="Tilmeldning.html" class="tilmeld-btn">Tilmeld</a></li>
     </ul>
 </nav>
+<!--navigationsbar slut-->
 
 <!-- Main heading for the registration form -->
 <h1> Tilmeld dig ved at udfylde denne formular</h1>
