@@ -316,3 +316,25 @@ button {
 button:hover {
   background-color: #c4e0fb;
 }
+
+
+/* End of Quiz styles */
+
+
+/* Ungedeler Kort styles */
+
+.card-row {
+    display: flex;
+    gap: 20px;          /* Space between cards */
+    justify-content: center; /* Center cards in row */
+    flex-wrap: wrap;    /* Allows wrapping on small screens */
+}
+
+.card-body {
+    width: 30%;         /* Make each card take 30% width */
+    min-width: 250px;   /* Prevent cards from shrinking too much */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
