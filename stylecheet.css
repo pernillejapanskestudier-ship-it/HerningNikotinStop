@@ -331,10 +331,20 @@ button:hover {
 }
 
 .card-body {
-    width: 30%;         /* Make each card take 30% width */
+    width: 60%;         /* Make each card take 30% width */
     min-width: 250px;   /* Prevent cards from shrinking too much */
-    background: white;
+    background: #E8F1FF;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-size: 2.1rem;    /* fontsize i figma er 48px divideret med en rem størrelse 16px, så 48/16=3rem */
+    margin-bottom: 10px;
+    color: #004076;
+}
+.card-text {
+    font-size: 1.2rem;     /* samme prencip, 32/16=2rem */
+    margin-bottom: 20px;
+    color: #004076;
 }
