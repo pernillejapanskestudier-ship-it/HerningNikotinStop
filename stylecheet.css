@@ -148,7 +148,7 @@ body {
 
 /* Navigationsbar style end */
 
-/* Forsidens to sektioner hvor der er billed & teskt */
+/* Forsidens to sektioner hvor der er billed & teskt - bliver også brugt på raekudsiden */
 #mini-heroes-container {
     flex-direction: column; /* Gør at billedet kommer før teksten */
     display: flex;
@@ -182,6 +182,36 @@ body {
     border-radius: 40px;
 }
 
+/* Stoplinien blå sektion */
+.stoplinien-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A0D1FB;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+.stoplinien {
+    display: flex;
+    display: center;
+    flex-direction:column;
+    justify-content: center;
+    max-width: 700px;
+    gap: 12px;
+}
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#Blåmand {
+    .cls-1 {
+        fill: #124173;
+      }
+    width: 200px;
+    height: auto;
+}
 /* ===== FORMULAR STYLES ===== */
 
 h1 {
