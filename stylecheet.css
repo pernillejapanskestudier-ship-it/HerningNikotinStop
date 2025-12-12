@@ -23,11 +23,36 @@ body {
     color: #F0F0F1;
 }
 
+/* Hero banner/billede & Titel */
+.banner-container {
+    position: relative;
+    z-index: 1;
+}
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#Hero-title {
+    font-family:  Jakarta Sans, sans-serif;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #DCEEFE;
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
 /* Navigationsbaren */
 
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    height: 80px;
     z-index: 1000;
     background-color: #98CDFB;
     display: flex;
@@ -37,12 +62,6 @@ body {
     border-radius: 50px;        
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     opacity: 0.95;
-}
-
-/* Logo placeres til venstre */
-.logo {
-    position: absolute;
-    left: 25px; /* samme som navbar padding */
 }
 
 /* --- DROPDOWN MENU --- */
@@ -86,18 +105,19 @@ body {
 
 /* --- LOGO --- */
 .logo img {
-    height: 45px;  /* Matcher højden på billedet */
+    height: 60px;  /* Matcher højden på billedet */
     width: auto;
+    padding-top: 5%;
 }
 
 /* --- MENUPUNKTERNE --- */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 110px;  /* Rigeligt mellemrum som i eksemplet */
+    justify-content: space-evenly;
+    flex: 1;
     margin: 0;
-    padding: 10px;
-    width: auto;
+    padding: 0;
     align-content: center;
      font-family:  Jakarta Sans, sans-serif;
     color: #004076;
@@ -126,8 +146,41 @@ body {
     background-color: #c4e0fb;
 }
 
-/* Navnbar style end */
+/* Navigationsbar style end */
 
+/* Forsidens to sektioner hvor der er billed & teskt */
+#mini-heroes-container {
+    flex-direction: column; /* Gør at billedet kommer før teksten */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.aabne-tekst {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.indhold {
+    display: flex;
+    flex-direction: column; /*gør at teksten står under hinanden*/
+    gap: 12px;
+    max-width: 400px; 
+}
+.mini-heroes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #E8F1FF;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    padding: 8px;
+}
+#PigeDerRyger, #DudeMedGruppe { /* dette er selve billederne uden deres container */
+    width: 250px;
+    height: auto;
+    border-radius: 40px;
+}
 
 /* ===== FORMULAR STYLES ===== */
 
@@ -328,8 +381,112 @@ button:hover {
   background-color: #c4e0fb;
 }
 
+/* End of Quiz styles */
+
+
+/* Ungedeler Kort styles */
+
+.card-row {
+    display: flex;
+    gap: 20px;          /* Space between cards */
+    justify-content: center; /* Center cards in row */
+    flex-wrap: wrap;    /* Allows wrapping on small screens */
+}
+
+.card-body {
+    width: 12%; 
+    min-width: 250px;
+    background: #E8F1FF;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.6rem;    /* fontsize i figma er 48px divideret med en rem størrelse 16px, så 48/16=3rem */
+    margin: 0 12px 0px 0px;
+    color: #004076;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+}
+.card-text {
+    font-size: 0.95rem;     /* samme prencip, 32/16=2rem */
+    margin-bottom: 12px;
+    color: #004076;
+    line-height: 1.45;
+}
+.ungedeler-kort-logo img {
+    height: 38px;  /* Matcher højden på billedet */
+    width: auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.card-button {
+    display: block;
+    width: fit-content;
+    
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 8px 24px;
+    background: #F3F7FF;
+    border: 2px solid #004076;
+    border-radius: 20px;
+    color: #004076;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* Ungedeler Kort styles slut*/
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+}
+.facebook-icon {
+    fill: #004076;
+    margin: 0 auto 12px auto;
+    cursor: pointer;
+    display: block;
+}
+.instagram-icon {
+    fill: #004076;
+    margin: 0 auto 12px auto;
+    cursor: pointer;
+    display: block;
+}
+
 /* Footer container - ensures centered content */
-footer > div {
+footer {
     max-width: 100%;
-    margin: 0 auto !important;
+    color: #004076; 
+    padding: 40px 0;
+    background-color: #a9d0f7;
+    width: 100%;
+}
+#footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 20px;
+}
+.footer-title {
+    color: #004076; 
+    margin-bottom: 10px;
 }
