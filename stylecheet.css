@@ -32,12 +32,17 @@ body {
     background-color: #98CDFB;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Ændret fra space-between til center */
     padding: 10px 25px;
     border-radius: 50px;        
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     opacity: 0.95;
-   
+}
+
+/* Logo placeres til venstre */
+.logo {
+    position: absolute;
+    left: 25px; /* samme som navbar padding */
 }
 
 /* --- DROPDOWN MENU --- */
@@ -89,9 +94,9 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;  /* Rigeligt mellemrum som i eksemplet */
+    gap: 110px;  /* Rigeligt mellemrum som i eksemplet */
     margin: 0;
-    padding: 0;
+    padding: 10px;
     width: auto;
     align-content: center;
      font-family:  Jakarta Sans, sans-serif;
