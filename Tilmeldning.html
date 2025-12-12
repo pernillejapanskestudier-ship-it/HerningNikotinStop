@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <!-- Ensures the page displays special Danish characters correctly (Æ, Ø, Å) -->
+    <!-- Lang = da betyder at man kan bruge de danske tegn (Æ, Ø, Å) -->
     <meta charset="UTF-8">
     <!-- Prevents search engines from indexing this page -->
     <meta name="robots" content="noindex">
@@ -13,24 +13,26 @@
     <link rel="stylesheet" href="stylecheet.css">
     
 <style>
-
 </style>
+
 
 <body>
 
-<!-- Navigation bar at the top of the page -->
+<!-- Navigations baren i toppen af hvert site -->
 <!--navigationsbar start-->
 <nav class="navbar">
     <div class="logo">
         <a href="Index.html">
             <img src="Images/hk_byvaaben_neg-uden-tekst.png" alt="Herning Kommune Logo">
-        </a>
+        </a> <!-- a det er anker og href er hypertext reffencen. a send mig videre til et site og 
+        href er hvad den sender dig til. A = Fisk mig et site frem HREF = Hvad fisker jeg frem -->
     </div>
 
     <!-- Navigation menu links -->
-    <ul class="nav-links">
+    <ul class="nav-links"> <!-- ul er en u-ordentlig liste, en masser punkter som ikke er i den rigtige orden 
+        ol er en ordentlig liste dvs. du skal f.eks gøre tingene i den konkrete rækkefølge-->
         
-        <li class="dropdown">
+        <li class="dropdown"> <!-- li det er bare listen i punktform -->
             <a href="Ungedeler.html">Unge deler</a>
             <ul class="dropdown-content">
                 <li><a href="Ungedeler.html#Personlige_historier">Personlige historier</a></li>
@@ -54,13 +56,32 @@
 </nav>
 <!--navigationsbar slut-->
 
+
+
+
 <!-- Main heading for the registration form -->
 <h1> Tilmeld dig ved at udfylde denne formular</h1>
 
-<!-- Registration form container -->
+
+<!-- Containeren til formularen -->
+<!--
+  Forklaring af formular-strukturen:
+  - `.form-container` : CSS-klasse som styler hele formularens udseende og plads.
+  - `<form>` : HTML-tag der samler alle inputfelter så de kan sendes sammen når brugeren klikker "Tilmeld".
+-->
 <div class="form-container">
     <form>
         <!-- Personal information fields -->
+        <!--
+          Hver felt består af to dele:
+          - `<label>` : tekstetiketten der fortæller brugeren hvad der skal indtastes.
+          - `<input>` : tekstboksen hvor brugeren skriver.
+          
+          Vigtige attributter:
+          - `type="text"` : tillader almindelig tekst (bogstaver, tal, tegn).
+          - `type="email"` : validerer at brugeren skriver en rigtig e-mail adresse.
+          - `name="navn"` : gives navnet på feltet så serveren ved hvilke data den modtager.
+        -->
         <label>Fulde navn:</label>
         <input type="text" name="navn">
 
@@ -73,7 +94,14 @@
         <label>Adresse:</label>
         <input type="text" name="adresse">
 
-        <!-- Two columns for postal code and city name -->
+        <!-- TTo kolonder ved siden af hindanen i formularen omkring By og Postnummer -->
+        <!--
+          `.row` og `.half` : CSS-klasser der gør at disse to felter ligger ved siden af hinanden.
+          - `.row` : bruges til at gruppere elementer horisontalt (side om side).
+          - `.half` : gør hvert element halvt bredt så de passer sammen på én linje.
+          
+          På små skærme (mobil) kan CSS gøre dem til fuld bredde igen med `flex-wrap`.
+        -->
         <div class="row">
             <div class="half">
                 <label>Post nummer:</label>
@@ -86,7 +114,14 @@
             </div>
         </div>
 
-        <!-- Dropdown to select program -->
+        <!-- Dropdown til at vælge det kursus man vil tilmeldes -->
+        <!--
+          `<select>` : rullemenu hvor brugeren vælger én mulighed fra listen.
+          - `name="program"` : fortæller serveren hvilken værdi der blev valgt.
+          - `<option>` : hver valgmulighed i dropdown-menuen.
+          
+          Når brugeren sender formular, sender den den valgte `<option>` værdi.
+        -->
         <label>Hvilket program:</label>
         <select name="program">
             <option>Walk and talk</option>
@@ -95,23 +130,77 @@
         </select>
 
         <!-- Submit button -->
+        <!--
+          `<button>` : knappen som brugeren klikker for at sende formular.
+          - `href="Tak-tilmelding.html"` : BEMÆRK: `href` virker ikke på `<button>`!
+            Brug i stedet `onclick="location.href='Tak-tilmelding.html'"` eller bedre:
+            erstat med `<a href="Tak-tilmelding.html" class="button">Tilmeld</a>` eller
+            tilføj JavaScript der håndterer formular-indsendelse og redirect.
+          
+          Bedste praksis: håndter formular-indsendelse med JavaScript eller server-backend.
+        -->
         <button href="Tak-tilmelding.html">Tilmeld</button>
     </form>
 </div>
 
-<!-- Secondary heading with call-to-action -->
+
+
+<!-- Overskrift i bunden af hvert site -->
 <h1>Læs mere om kursus eller tilmeld dig med det samme du er ikke alene</h1>
 
+
+
 <!-- Two buttons for navigation -->
+<!--
+    Forklaring (for begyndere):
+    - Dette er en "container" der hedder `button-row`.
+        CSS-klassen `.button-row` bestemmer hvordan knapperne ligger side om side
+        (ofte med `display: flex` i din stylesheet).
+    - Hver "knap" er et link (`<a>`) med klassen `pill-button`.
+        Det betyder at det ser ud som en knap, men opfører sig som et link.
+    - `href`-attributten bestemmer hvor linket går hen. Skift `#` til en side
+        eller fil (fx `Laesmere.html` eller `Tilmeldning.html`) for at åbne
+        den side når brugeren klikker.
+
+    Hvad du kan ændre (enkelt):
+    - Ændre teksten mellem tag'ene for at skrive noget andet, fx
+        `<a href="Laesmere.html" class="pill-button">Læs mere</a>`
+    - For at centrer knapperne: i `stylecheet.css` skal `.button-row` have
+        `display: flex; justify-content: center;` og `.pill-button` skal være
+        `display: inline-flex` eller `inline-block`.
+    - Hvis én knap er større: giv begge en `min-width` eller ens `padding`
+        i `.pill-button` for at gøre dem lige store.
+-->
 <div class="button-row">
-    <a href="#" class="pill-button">Læs mere</a>
-    <a href="#" class="pill-button">Tilmeld</a>
+        <!-- Link der ser ud som en knap. Skift href til destinationssiden. -->
+        <a href="Laesmere.html" class="pill-button">Læs mere</a>
+        <!-- Link der ser ud som en knap. Skift href til tak-siden eller formularens side. -->
+        <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
 </div>
 
 
+
 <!-- Footer section with centered content -->
+<!--
+  Forklaring af footer-attributter:
+  - `background-color: #a9d0f7;` : baggrundsfarven for hele footeren.
+  - `color: #004076;` : standard tekstfarve inde i footeren.
+  - `padding: 40px 0;` : lodret afstand (40px) over og under footeren, ingen vandret padding.
+-->
 <footer style="background-color: #a9d0f7; color: #004076; padding: 40px 0;">
     <!-- Inner container with centered flexbox layout -->
+    <!--
+      Forklaring af inner container (hver linje forklares kort):
+      - `max-width: 1000px;` : begrænser bredden så indholdet ikke bliver for bredt på store skærme.
+      - `margin: 0 auto;` : centrerer containeren horisontalt i footeren (top/bund 0, auto sider).
+      - `display: flex;` : gør containeren til en flexbox, så dens børn kan placeres fleksibelt på en linje.
+      - `justify-content: space-between;` : fordeler de indre elementer med plads imellem (venstre, midt, højre).
+      - `flex-wrap: wrap;` : tillader at elementerne går ned på næste linje på små skærme.
+      - `gap: 50px;` : sætter 50px afstand mellem hver kolonne/sektion i footeren.
+      - `align-items: flex-start;` : justerer indholdets topkant så overskrifter starter øverst.
+      - `width: 100%;` : sørger for at containeren bruger hele den tilladte bredde inden for max-width.
+      - `padding: 0 20px;` : tilføjer 20px indvendig afstand i siderne på små skærme.
+    -->
     <div style="
         max-width: 1000px; 
         margin: 0 auto; /* Centers the footer horizontally */
@@ -124,7 +213,7 @@
         padding: 0 20px; /* Small padding on sides for mobile devices */
     ">
         
-        <!-- Footer section: Navigation links -->
+        <!-- Footer sektion: Navigation links -->
         <div>
             <h3 style="color: #004076; margin-bottom: 10px;">Under sider</h3>
             <p>Unge deler</p>
@@ -132,7 +221,7 @@
             <p>Ræk ud</p>
         </div>
 
-        <!-- Footer section: Contact information -->
+        <!-- Footer sektion: kontakt information -->
         <div>
             <h3 style="color: #004076; margin-bottom: 10px;">Herning Kommune</h3>
             <p>Torvet 5</p>
@@ -141,7 +230,7 @@
             <p>Kontakt kommunen – 96 28 28 28</p>
         </div>
 
-        <!-- Footer section: -->
+        <!-- Footer sektion sociale medier filer: -->
         <div>
             <h3 style="color: #004076; margin-bottom: 10px;">Find os her</h3>
             <!-- Facebook -->
