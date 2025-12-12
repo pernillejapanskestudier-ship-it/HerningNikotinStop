@@ -148,6 +148,25 @@ body {
 
 /* Navigationsbar style end */
 
+
+/* Raekud siden :/ */
+#reakud-title {
+ font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.5rem;
+    padding-top: 8%;
+}
+.Lady-yeah {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 4%;
+}
+#Lady-yeah-img {
+    border-radius: 40px;
+}
 /* Forsidens to sektioner hvor der er billed & teskt - bliver også brugt på raekudsiden */
 #mini-heroes-container {
     flex-direction: column; /* Gør at billedet kommer før teksten */
@@ -190,14 +209,15 @@ body {
     background-color: #A0D1FB;
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     padding: 20px;
+    margin-top: 8%;
 }
 .stoplinien {
     display: flex;
     display: center;
     flex-direction:column;
     justify-content: center;
-    max-width: 700px;
-    gap: 12px;
+    max-width: 500px;
+    margin-left: 20px;
 }
 .svg-container {
     display: flex;
@@ -212,6 +232,7 @@ body {
     width: 200px;
     height: auto;
 }
+
 /* ===== FORMULAR STYLES ===== */
 
 h1 {
