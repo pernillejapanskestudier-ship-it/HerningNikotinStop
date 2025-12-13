@@ -167,6 +167,47 @@ body {
 #Lady-yeah-img {
     border-radius: 40px;
 }
+.ring-nu-knappen {  /* Har samme formatering some card button */
+    position: relative;
+    display: block;
+    width: fit-content;
+    
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 8px 24px;
+    background: #F3F7FF;
+    border: 2px solid #004076;
+    border-radius: 20px;
+    color: #004076;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ring-nu-knappen::after {
+  content: "Ring nu!";
+  position: absolute;
+  top: 120%; /* placerer teksten UNDER knappen */
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: #004076;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.ring-nu-knappen:hover::after {
+  opacity: 1;
+}
 /* Forsidens to sektioner hvor der er billed & teskt - bliver også brugt på raekudsiden */
 #mini-heroes-container {
     flex-direction: column; /* Gør at billedet kommer før teksten */
