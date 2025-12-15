@@ -63,7 +63,8 @@ body {
 }
 #Tilbage-tilforside-knap {
      margin-top: 10px;
-     
+     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Navigationsbaren */
