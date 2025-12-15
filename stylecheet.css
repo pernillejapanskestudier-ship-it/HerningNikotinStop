@@ -17,16 +17,17 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family:  Jakarta Sans, sans-serif;
     color: #004076;
+    text-align: center;
 }
 
 body {
     color: #F0F0F1;
+    line-height: 48px;
 }
 
 /* Hero banner/billede & Titel */
 .banner-container {
     position: relative;
-    position: center;
 }
 .banner-image {
     width: 100%;
@@ -48,12 +49,14 @@ body {
 
     z-index: 2;  /* Dette gør at containeren med dette content i liger ovenpå banneret. Det er basicly 'layers' */
 }
-#Hero-title {
+.Hero-title {
     font-family: Jakarta Sans, sans-serif;
     color: #DCEEFE;
     font-size: 4rem;
     font-weight: bold;
     font-style: italic;
+
+    z-index: 2;
 }
 #Hero-title-undertekst {
     font-family: Jakarta Sans, sans-serif;
@@ -561,6 +564,50 @@ button:hover {
     text-decoration: none;
 }
 /* Ungedeler Kort styles slut*/
+
+/* Ungedeler med mere */
+
+.Ungefortaeller-container {
+    display: flex;
+gap: 1px;
+align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.svg-container-UngeDeler {
+flex: 0 0 300px;
+}
+.ungefortæller {
+    max-width: 700px; 
+}
+.Collage-picture-container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.Collage-picture {
+max-width: 100%;
+height: auto;
+}
+.Moter-andre-container {
+    display: flex;
+    justify-content: center; /* horisontalt */
+    align-items: center;     /* vertikalt */
+    padding-bottom: 4%;
+}
+#mange-ligesom-dig {
+    font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.5rem;
+    padding-top: 1%;
+    margin-bottom: 0;
+}
+
+/* Ungedeler slut */
 
 .icon-wrapper {
     display: flex;
