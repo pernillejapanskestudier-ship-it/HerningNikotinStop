@@ -11,8 +11,148 @@
 
     <!--where the html gets it's 'make up' uwu-->
     <link rel="stylesheet" href="stylecheet.css" />
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F1;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      gap: 8px;
+      padding: 5px;
+    }
+
+    /* Left column */
+    .left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .quiz {
+      background-color: #758bb1; /* blue-ish */
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: white;
+    }
+
+    .mini-games {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mini-game {
+      background-color: #758bb1; /* same blue */
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: white;
+      height: 100px;
+    }
+
+    /* Right column */
+    .right-column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+    }
+  </style>
+
   </head>
-  <body>
+<body>
+
+  <!--navigationsbar start-->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="Index.html">
+          <img src="Images/hk_logo_bred_neg-ved-siden-af-logo.png" alt="Herning Kommune Logo" />
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="Ungedeler.html">Unge deler</a>
+          <ul class="dropdown-content">
+            <li>
+              <a href="Ungedeler.html#Personlige_historier"
+                >Personlige historier</a
+              >
+            </li>
+            <li><a href="Ungedeler.html#Moter_andre">Mød andre</a></li>
+          </ul>
+        </li>
+
+        <li><a href="Raekud.html">Ræk ud</a></li>
+
+        <li><a href="Testdigselv.html">Test dig selv!</a></li>
+
+        <li class="dropdown">
+          <a href="Laesmere.html">Læs mere</a>
+          <ul class="dropdown-content">
+            <li><a href="Laesmere.html#Fun_facts">Fun facts</a></li>
+          </ul>
+        </li>
+
+        <li><a href="Tilmeldning.html" class="tilmeld-btn">Tilmeld</a></li>
+      </ul>
+    </nav>
+    <!--navigationsbar slut-->
+
+    <h2>Test dig selv; og ha' sjov med Nikotinmandens spil!</h2>
+
+  <div class="container">
+    <div class="left-column">
+        <!--Quiz!-->
+
+    <div id="quiz">
+        <h3>Nikotin Quizzen!</h3>
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="submit">Indsend!</button>
+    </div>
+
+    <script src="Quizscript.js"></script>
+
+    <!--Quiz slut-->
+
+   <!--Cigarette mini game-->
+
+      <div class="mini-games">
+
+        <div class="stats">
+    <p>Smøger røget: <span id="cigCount">0</span></p>
+    <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
+  </div>
+
+  <div class="game-container">
+    <img id="smoker" src="Images/frame1.png" alt="smoker">
+  </div>
+
+<!--Tand slider simulator-->
+        <div class="mini-game">
+
+
+        </div>
+      </div>
+    </div>
+    <div class="right-column"><img class="nikotinmanden" src="Images/NikotinManden.jpg" alt="En figur lavet ud af diverste nikotinprodukter; som til sidst ligner en lille person som holder en pakke cigaretter">
+</div>
+  </div>
+
+</body>
+</html>
 
 
   </body>
