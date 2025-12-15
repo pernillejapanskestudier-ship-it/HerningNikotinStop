@@ -23,6 +23,10 @@ p {
 body {
     color: #F0F0F1;
     line-height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Hero banner/billede & Titel */
@@ -475,6 +479,27 @@ button:hover {
 }
 /* End of Cigarette Game styles */
 
+/* TAND SLIDER! WOW!!! :D */
+.teeth {
+    width: 300px;
+    height: 120px;
+    background-image: url('Images/tand_hvid.png'); /* startbillede med hvide tænder */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .slider-container {
+    width: 300px;
+  }
+  input[type=range] {
+    width: 100%;
+  }
+  #label {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
 
 /* Quiz styles */
 #quiz {
