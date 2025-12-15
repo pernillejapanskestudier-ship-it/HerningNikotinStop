@@ -42,8 +42,6 @@ smoker.addEventListener("click", () => {
 
 
 // Tand Script :D
-
-// === TAND SCRIPT ===
 const slider = document.getElementById('slider');
 const teeth = document.getElementById('teeth');
 const label = document.getElementById('label');

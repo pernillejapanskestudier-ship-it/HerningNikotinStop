@@ -494,7 +494,8 @@ button:hover {
   input[type=range] {
     width: 100%;
   }
-  #label {
+  #tandlabel {
+font-family:  Jakarta Sans, sans-serif;
   margin-top: 15px;
   font-size: 16px;
   font-weight: 500;
