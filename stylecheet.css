@@ -26,12 +26,13 @@ body {
 /* Hero banner/billede & Titel */
 .banner-container {
     position: relative;
-    z-index: 1;
+    position: center;
 }
 .banner-image {
     width: 100%;
     height: auto;
     display: block;
+    z-index: 1;
 }
 .Tak-kort {
     position: absolute;
