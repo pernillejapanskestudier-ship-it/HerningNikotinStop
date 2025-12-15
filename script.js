@@ -50,16 +50,16 @@ slider.addEventListener('input', () => {
   const value = slider.value;
 
   if (value < 25) {
-    teeth.style.backgroundImage = "url(Images/tand_hvid.png)";
+    teeth.style.backgroundImage = "url('Images/tand_hvid.png')";
     label.textContent = "Sunde hvide tænder, ingen snus!";
   } else if (value < 50) {
-    teeth.style.backgroundImage = "url(Images/tand_let_gul.png)";
+    teeth.style.backgroundImage = "url('Images/tand_let_gul.png')";
     label.textContent = "Efter 6 måneders normal snus forbrug.";
   } else if (value < 75) {
-    teeth.style.backgroundImage = "url(Images/tand_gul.png)";
+    teeth.style.backgroundImage = "url('Images/tand_gul.png')";
     label.textContent = "Efter 2 års snus forbrug.";
   } else {
-    teeth.style.backgroundImage = "url(Images/tand_meget_gul.png)";
+    teeth.style.backgroundImage = "url('Images/tand_meget_gul.png')";
     label.textContent = "Efter 5 års tungt snus forbrug...";
   }
 });
