@@ -433,14 +433,27 @@ button:hover {
     color: #e8f1ff;
 }
 
+/* test dig selv side! */
 
-/* Cigarette Game styles */
+#Nikotinmanden-med-titel {
+    display: flex;
+    padding-top: 10%;
+}
 
+.nikotinmand-spil-velkommen {
+    font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 6rem;
+}
+.nikotinmandens-container {
+    display: flex;
+    justify-content: center;
+}
 .nikotinmanden {
-  width: 50%;
+  width: 210px;
   height: auto;
-  border: none;
-  border-radius: 10px;
 }
 
 .stats p {
