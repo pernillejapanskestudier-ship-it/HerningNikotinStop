@@ -26,6 +26,10 @@ body {
     line-height: 48px;
 }
 
+.test-dig-selv-page {
+    background: url('Images/NikotinManden.jpg') no-repeat center center / cover, #F0F0F1;
+}
+
 /* Hero banner/billede & Titel */
 .banner-container {
     position: relative;
@@ -132,7 +136,7 @@ body {
 .logo img {
     height: 60px;  /* Matcher højden på billedet */
     width: auto;
-    padding-top: 5%;
+    padding-top: 12%;
 }
 
 /* --- MENUPUNKTERNE --- */
@@ -443,6 +447,7 @@ button:hover {
     align-items: center;
     padding: 20px;
     margin-top: 5%;
+    z-index: 1;
 }
 
 .quiz-container {
@@ -479,7 +484,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    max-width: 500px;
 }
 
 #Nikotinmanden-med-titel {
@@ -497,14 +501,6 @@ button:hover {
     font-style: italic;
     font-size: 3rem;
     text-align: center;
-}
-.nikotinmandens-container {
-    display: flex;
-    justify-content: center;
-}
-.nikotinmanden {
-  width: 270px;
-  height: auto;
 }
 
 .stats p {
@@ -557,7 +553,8 @@ button:hover {
 
 #question {
   margin-bottom: 20px;
-  display: center;
+ text-align: center;
+ line-height: 24px;
 }
 
 #options {
