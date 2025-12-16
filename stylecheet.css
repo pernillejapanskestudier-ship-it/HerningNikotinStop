@@ -283,11 +283,11 @@ body {
 }
 .stoplinien {
     display: flex;
-    display: center;
     flex-direction:column;
     justify-content: center;
     max-width: 500px;
     margin-left: 20px;
+    text-align: center;
 }
 .svg-container {
     display: flex;
