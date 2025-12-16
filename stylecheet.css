@@ -557,6 +557,7 @@ button:hover {
 
 #question {
   margin-bottom: 20px;
+  display: center;
 }
 
 #options {
