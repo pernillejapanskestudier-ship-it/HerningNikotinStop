@@ -12,6 +12,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-family:  Jakarta Sans, sans-serif;
     color: #004076;
+    text-align: center;
 }
 
 p {
@@ -23,10 +24,6 @@ p {
 body {
     color: #F0F0F1;
     line-height: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 /* Hero banner/billede & Titel */
@@ -439,9 +436,53 @@ button:hover {
 
 /* test dig selv side! */
 
+.test-dig-selv-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
+    margin-top: 5%;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.games-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.snus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 500px;
+}
+.cigarette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 500px;
+}
+
 #Nikotinmanden-med-titel {
     display: flex;
-    padding-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    gap: 20px;
 }
 
 .nikotinmand-spil-velkommen {
@@ -449,7 +490,8 @@ button:hover {
     color: #004076;
     font-weight: bold;
     font-style: italic;
-    font-size: 6rem;
+    font-size: 3rem;
+    text-align: center;
 }
 .nikotinmandens-container {
     display: flex;
@@ -470,14 +512,10 @@ button:hover {
   margin-top: 20px;
 }
 
-#smoker {
-  width: 300px;
-  cursor: pointer;
-  user-select: none;
-  border: 0px solid rgb(7, 9, 70);
-  border-radius: 10px;
+.cigarette-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
-/* End of Cigarette Game styles */
 
 /* TAND SLIDER! WOW!!! :D */
 .teeth {
