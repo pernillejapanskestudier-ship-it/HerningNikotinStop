@@ -12,7 +12,7 @@
     <!--where the html gets it's 'make up' uwu-->
     <link rel="stylesheet" href="stylecheet.css" />
   </head>
-  <body class="test-dig-selv-page">
+  <body>
     <!--navigationsbar start-->
     <nav class="navbar">
       <div class="logo">
@@ -53,70 +53,56 @@
     </nav>
     <!--navigationsbar slut-->
 
-    <div id="Nikotinmanden-med-titel">
-      <div id="nikotinmand-spil-velkommen">
-        <h2>Test dig selv; og ha' sjov med Nikotinmandens spil!</h2>
+    <h1>Test dig selv; og ha' sjov med Nikotinmandens spil!</h1>
+
+    <div class="main-layout">
+      <div class="content-section">
+        <div class="quiz-container">
+          <!--Quiz!-->
+          <div id="quiz">
+            <h3>Nikotin Quizzen!</h3>
+            <div id="question"></div>
+            <div id="options"></div>
+          </div>
+          <script defer src="Quizscript.js"></script>
+          <!--Quiz slut-->
+        </div>
+
+        <div class="games-row">
+          <div class="snus-container">
+            <!--Snus tand slider Game-->
+            <div class="teeth" id="teeth"></div>
+            <p id="label">Sunde hvide tænder, ingen snus!</p>
+            <div class="slider-container">
+              <input type="range" min="0" max="100" value="0" id="slider" />
+            </div>
+            <script src="script.js" defer></script>
+            <!--defer vigtig kommando-->
+            <!--Snus tand slider Game afslut-->
+          </div>
+
+          <div class="cigarette-container">
+            <!--Cigarette Game-->
+            <h4>Hvor mange kroner ryger du på en dag?</h4>
+            <div class="stats">
+              <p>Smøger røget: <span id="cigCount">0</span></p>
+              <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
+            </div>
+            <div class="game-container">
+              <img id="smoker" src="Images/frame1.png" alt="smoker" />
+            </div>
+            <!--This is the cough sound audio-->
+            <audio id="coughSound" src="Images/cough.mp3"></audio>
+            <!--This is the java script for the game :D-->
+            <script src="script.js" defer></script>
+            <!--Cigarette Game afslut-->
+          </div>
+        </div>
+      </div>
+      <div class="nikotinmand-section">
+        <img src="Images/NikotinManden.jpg" alt="Nikotinmanden" />
       </div>
     </div>
-
-    <section class="test-dig-selv-container">
-
-<div class="quiz-container">
-      <!--Quiz!-->
-
-    <div id="quiz">
-      <h3>Nikotin Quizzen!</h3>
-      <div id="question"></div>
-      <div id="options"></div>
-    </div>
-
-    <script defer src="Quizscript.js"></script>
-
-    <!--Quiz slut-->
-</div>
-
-
-<div class="games-row">
-<div class="snus-container">
-    <!--Snus tand slider Game-->
-    <div class="teeth" id="teeth"></div>
-    <p id="label">Sunde hvide tænder, ingen snus!</p>
-
-    <div class="slider-container">
-      <input type="range" min="0" max="100" value="0" id="slider" />
-    </div>
-
-    <script src="script.js" defer></script>
-    <!--defer vigtig kommando-->
-    <!--Snus tand slider Game afslut-->
-    </div>
-
-    <div class="cigarette-container">
-    <!--Cigarette Game-->
-
-    <h1>
-      Hvor mange kroner ryger du på en dag?
-    </h1>
-
-    <div class="stats">
-      <p>Smøger røget: <span id="cigCount">0</span></p>
-      <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
-    </div>
-
-    <div class="game-container">
-      <img id="smoker" src="Images/frame1.png" alt="smoker" />
-    </div>
-
-    <!--This is the cough sound audio-->
-    <audio id="coughSound" src="Images/cough.mp3"></audio>
-    <!--This is the java script for the game :D-->
-    <script src="script.js" defer></script>
-
-    <!--Cigarette Game afslut-->
-    </div>
-</div>
-
-    </section>
 
 
 

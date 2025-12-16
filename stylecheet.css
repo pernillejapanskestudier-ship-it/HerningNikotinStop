@@ -1,8 +1,6 @@
-/* Moderne CSS Reset, så det ser ens ud over alt uanset browser anvendt */
 * {
     border: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -34,9 +32,7 @@ body {
     line-height: 48px;
 }
 
-.test-dig-selv-page {
-    background: url('Images/NikotinManden.jpg') no-repeat center center / cover, #F0F0F1;
-}
+
 
 /* Hero banner/billede & Titel */
 .banner-container {
@@ -449,14 +445,40 @@ button:hover {
 
 /* test dig selv side! */
 
-.test-dig-selv-container {
+.main-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.nikotinmand-section {
+    flex: 1;
+    text-align: center;
+}
+
+.nikotinmand-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.content-section {
+    flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    padding: 20px;
-    margin-top: 5%;
-    z-index: 1;
+    gap: 20px;
+}
+
+.test-dig-selv-page h1:first-of-type {
+    font-family: Jakarta Sans, sans-serif;
+    color: #004076;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .quiz-container {
@@ -464,15 +486,15 @@ button:hover {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 1000px;
 }
 
 .games-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 @media (max-width: 768px) {
@@ -487,49 +509,48 @@ button:hover {
     align-items: center;
     flex: 1;
     max-width: 500px;
+    min-height: 350px;
 }
 .cigarette-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
-}
-
-#Nikotinmanden-med-titel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    gap: 20px;
-}
-
-.nikotinmand-spil-velkommen {
-    font-family:  Jakarta Sans, sans-serif;
-    color: #004076;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3rem;
-    text-align: center;
+    min-height: 350px;
 }
 
 .stats p {
-  font-size: 1.2rem;
-  margin: 5px;
+  font-size: 1rem;
+  margin: 2px;
+  font-weight: bold;
 }
 
 .game-container {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+#smoker {
+  width: 150px;
+  height: auto;
 }
 
 .cigarette-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #004076;
+}
+
+.cigarette-container p {
+    line-height: 1.2;
+    font-family: Jakarta Sans, sans-serif;
 }
 
 /* TAND SLIDER! WOW!!! :D */
 .teeth {
-    width: 300px;
+    width: 250px;
     height: 120px;
     background-image: url('Images/tand_hvid.png'); /* startbillede med hvide tænder */
     background-size: contain;
@@ -537,7 +558,7 @@ button:hover {
     background-position: center;
   }
   .slider-container {
-    width: 300px;
+    width: 250px;
   }
   input[type=range] {
     width: 100%;
