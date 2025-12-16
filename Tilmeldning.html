@@ -180,69 +180,70 @@
 
 
 
-<!-- Footer section with centered content -->
-<!--
-  Forklaring af footer-attributter:
-  - `background-color: #a9d0f7;` : baggrundsfarven for hele footeren.
-  - `color: #004076;` : standard tekstfarve inde i footeren.
-  - `padding: 40px 0;` : lodret afstand (40px) over og under footeren, ingen vandret padding.
--->
-<footer style="background-color: #a9d0f7; color: #004076; padding: 40px 0;">
-    <!-- Inner container with centered flexbox layout -->
-    <!--
-      Forklaring af inner container (hver linje forklares kort):
-      - `max-width: 1000px;` : begrænser bredden så indholdet ikke bliver for bredt på store skærme.
-      - `margin: 0 auto;` : centrerer containeren horisontalt i footeren (top/bund 0, auto sider).
-      - `display: flex;` : gør containeren til en flexbox, så dens børn kan placeres fleksibelt på en linje.
-      - `justify-content: space-between;` : fordeler de indre elementer med plads imellem (venstre, midt, højre).
-      - `flex-wrap: wrap;` : tillader at elementerne går ned på næste linje på små skærme.
-      - `gap: 50px;` : sætter 50px afstand mellem hver kolonne/sektion i footeren.
-      - `align-items: flex-start;` : justerer indholdets topkant så overskrifter starter øverst.
-      - `width: 100%;` : sørger for at containeren bruger hele den tilladte bredde inden for max-width.
-      - `padding: 0 20px;` : tilføjer 20px indvendig afstand i siderne på små skærme.
-    -->
-    <div style="
-        max-width: 1000px; 
-        margin: 0 auto; /* Centers the footer horizontally */
-        display: flex; 
-        justify-content: space-between; 
-        flex-wrap: wrap;
-        gap: 50px;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0 20px; /* Small padding on sides for mobile devices */
-    ">
-        
-        <!-- Footer sektion: Navigation links -->
-        <div>
-            <h3 style="color: #004076; margin-bottom: 10px;">Under sider</h3>
-            <p>Unge deler</p>
-            <p>Læs mere</p>
-            <p>Ræk ud</p>
+<!--footer start-->
+    <footer>
+      <!-- Inner container with centered flexbox layout -->
+      <div id="footer-container">
+        <!-- Footer section: Navigation links -->
+        <div class="footer-info-section">
+          <h3 class="footer-title">Under sider</h3>
+          <p>Unge deler</p>
+          <p>Læs mere</p>
+          <p>Ræk ud</p>
         </div>
 
-        <!-- Footer sektion: kontakt information -->
-        <div>
-            <h3 style="color: #004076; margin-bottom: 10px;">Herning Kommune</h3>
-            <p>Torvet 5</p>
-            <p>7400 Herning</p>
-            <p>CVR: 29 18 99 19</p>
-            <p>Kontakt kommunen – 96 28 28 28</p>
+        <!-- Footer section: Contact information -->
+        <div class="footer-info-section">
+          <h3 class="footer-title">Herning Kommune</h3>
+          <p>Torvet 5</p>
+          <p>7400 Herning</p>
+          <p>CVR: 29 18 99 19</p>
+          <p>Kontakt kommunen – 96 28 28 28</p>
         </div>
 
-        <!-- Footer sektion sociale medier filer: -->
-        <div>
-            <h3 style="color: #004076; margin-bottom: 10px;">Find os her</h3>
-            <!-- Facebook -->
-            <p> Facebook </p>
-
-            <!-- Instagram -->
-            <p> Instagram </p>
+        <!-- Footer section: Icons-->
+        <div class="footer-info-section">
+          <h3 class="footer-title">Find os her</h3>
+          <!--Facebook Icon-->
+          <div class="Icon-wrapper">
+            <a href="https://www.facebook.com/herningkommune/#">
+            <svg
+              class="facebook-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="40"
+              height="40"
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"
+              ></path>
+            </svg>
+            </a>
+          </div>
+          <!-- Instagram -->
+          <div class="Icon-wrapper">
+            <a href="https://www.instagram.com/herningkommune/#">
+            <svg
+              class="instagram-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="40"
+              height="40"
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
+              ></path>
+            </svg>
+            </a>
+          </div>
         </div>
-
-    </div>
-</footer>
-
+      </div>
+    </footer>
+    <!--footer slut :)-->
 </body>
 
 </html>
