@@ -454,12 +454,17 @@ button:hover {
 }
 
 .games-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    justify-content: center;
     width: 100%;
     max-width: 1200px;
-    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .games-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 .snus-container {
