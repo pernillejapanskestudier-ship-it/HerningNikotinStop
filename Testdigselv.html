@@ -11,16 +11,14 @@
 
     <!--where the html gets it's 'make up' uwu-->
     <link rel="stylesheet" href="stylecheet.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!--navigationsbar start-->
     <nav class="navbar">
       <div class="logo">
         <a href="Index.html">
-          <img
-            src="Images/hk_logo_bred_cmyk-ved-siden-af-logo.png"
-            alt="Herning Kommune Logo"
-          />
+          <img src="Images/hk_logo_bred_cmyk-ved-siden-af-logo.png" alt="Herning Kommune Logo" />
         </a>
       </div>
 
@@ -53,84 +51,64 @@
     </nav>
     <!--navigationsbar slut-->
 
-    <h1>Test dig selv; og ha' sjov med Nikotinmandens spil!</h1>
+<main class="test-dig-selv-page">
 
-      <div class="nikotinmand-quiz-section">
+  <header class="page-header">
+    <h1>Test dig selv</h1>
+    <p>Leg, lær og bliv klogere på nikotin – sammen med Nikotinmanden</p>
+  </header>
 
-        <div class="quiz-container">
-          <!--Quiz!-->
-          <div id="quiz">
-            <h3>Nikotin Quizzen!</h3>
-            <div id="question"></div>
-            <div id="options"></div>
-          </div>
-          <script defer src="Quizscript.js"></script>
-          <!--Quiz slut-->
-        </div>
-
-        <div class="nikotinmand-section">
-          <img src="Images/NikotinManden.jpg" alt="Nikotinmanden" />
-        </div>
-
-
-      </div>
-
-
-      <div class="snus-section">
-
-        <h2>Check din <br> sundhed!</h2>
-
-        <div class="snus-container">
-          <!--Snus tand slider Game-->
-          <div class="teeth" id="teeth"></div>
-          <p id="label">Sunde hvide tænder, ingen snus!</p>
-          <div class="slider-container">
-            <input type="range" min="0" max="100" value="0" id="slider" />
-          </div>
-          <script src="script.js" defer></script>
-          <!--defer vigtig kommando-->
-          <!--Snus tand slider Game afslut-->
+  <section class="game-card">
+    <div class="game-content">
+      <div>
+        <h2>Nikotin Quizzen</h2>
+        <div id="quiz">
+          <div id="question"></div>
+          <div id="options"></div>
         </div>
       </div>
 
-
-      <div class="cigarette-section">
-        <div class="cigarette-container">
-          <!--Cigarette Game-->
-
-
-          
-          <h4>Hvor mange kroner ryger du på en dag?</h4>
-          <div class="stats">
-            <p>Smøger røget: <span id="cigCount">0</span></p>
-            <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
-          </div>
-
-
-          <div class="game-container">
-            <img id="smoker" src="Images/frame1.png" alt="smoker" />
-          </div>
-          <!--This is the cough sound audio-->
-          <audio id="coughSound" src="Images/cough.mp3"></audio>
-          <!--This is the java script for the game :D-->
-          <script src="script.js" defer></script>
-          <!--Cigarette Game afslut-->
-        </div>
+      <div class="nikotinmand-section">
+        <img src="Images/NikotinManden.jpg" alt="Nikotinmanden">
       </div>
+    </div>
+    <script src="Quizscript.js" defer></script>
+  </section>
 
+  <section class="game-card light">
+    <h2>Check din sundhed</h2>
+    <div class="snus-container">
+      <div class="teeth" id="teeth"></div>
+      <p id="label">Sunde hvide tænder, ingen snus!</p>
+      <div class="slider-container">
+        <input type="range" min="0" max="100" value="0" id="slider">
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </section>
 
+  <section class="game-card light">
+    <h2>Hvad koster rygning?</h2>
+    <div class="cigarette-container">
+      <div class="stats">
+        <p>Smøger røget: <span id="cigCount">0</span></p>
+        <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
+      </div>
+      <img id="smoker" src="Images/frame1.png" alt="ryger">
+      <audio id="coughSound" src="Images/cough.mp3"></audio>
+    </div>
+  </section>
 
-
-    <!--call to action :D-->
-    <h1>Læs mere om vores kursus eller tilmeld dig i dag</h1>
-
-    <!-- Two buttons for navigation -->
+  <section class="cta-section">
+    <h2>Klar til næste skridt?</h2>
     <div class="button-row">
       <a href="Laesmere.html" class="pill-button">Læs mere</a>
       <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
     </div>
+  </section>
 
-    <!--footer start-->
+</main>
+<!--footer start-->
     <footer>
       <!-- Inner container with centered flexbox layout -->
       <div id="footer-container">
@@ -157,37 +135,37 @@
           <!--Facebook Icon-->
           <div class="Icon-wrapper">
             <a href="https://www.facebook.com/herningkommune/#">
-              <svg
-                class="facebook-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="40"
-                height="40"
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"
-                ></path>
-              </svg>
+            <svg
+              class="facebook-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="40"
+              height="40"
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"
+              ></path>
+            </svg>
             </a>
           </div>
           <!-- Instagram -->
           <div class="Icon-wrapper">
             <a href="https://www.instagram.com/herningkommune/#">
-              <svg
-                class="instagram-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="40"
-                height="40"
-                viewBox="0 0 30 30"
-              >
-                <path
-                  d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
-                ></path>
-              </svg>
+            <svg
+              class="instagram-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="40"
+              height="40"
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
+              ></path>
+            </svg>
             </a>
           </div>
         </div>

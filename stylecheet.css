@@ -809,3 +809,237 @@ footer {
 #Blok-diagram .st3 { fill: #3a7bbe; }
 #Blok-diagram .st4 { fill: #226eb6; }
 /* SVG styles end */
+
+
+/* chatgbt løsning til test dig selv */
+/* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: 0;
+    }
+
+    body {
+      font-family: Jakarta Sans, sans-serif;
+      background-color: #F0F0F1;
+      color: #004076;
+    }
+
+    h1, h2, h3 {
+      color: #004076;
+      text-align: center;
+      font-style: italic;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #98CDFB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      padding: 10px 25px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin-left: 40px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #004076;
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    .tilmeld-btn {
+      background-color: #F0F0F1;
+      padding: 6px 18px;
+      border-radius: 12px;
+      border: 2px solid #004076;
+    }
+
+    /* ===== PAGE ===== */
+    .test-dig-selv-page {
+      padding-top: 140px;
+    }
+
+    .page-header {
+      max-width: 700px;
+      margin: 0 auto 80px auto;
+      text-align: center;
+    }
+
+    .page-header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* ===== GAME CARDS ===== */
+    .game-card {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #d3e6f9;
+      border-radius: 25px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .game-card.light {
+      background-color: #E8F1FF;
+    }
+
+    .game-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* ===== QUIZ ===== */
+    #quiz {
+      max-width: 500px;
+      background-color: #E8F1FF;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    #options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #E8F1FF;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #c4e0fb;
+    }
+
+    .nikotinmand-section img {
+      height: 260px;
+    }
+
+    /* ===== SNUS ===== */
+    .snus-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .teeth {
+      width: 250px;
+      height: 120px;
+      background-image: url('Images/tand_hvid.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .slider-container {
+      width: 250px;
+    }
+
+    input[type=range] {
+      width: 100%;
+    }
+
+    /* ===== CIGARET ===== */
+    .cigarette-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    #smoker {
+      width: 200px;
+    }
+
+    .stats p {
+      font-weight: bold;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .pill-button {
+      padding: 12px 40px;
+      border-radius: 50px;
+      border: 3px solid #004076;
+      background-color: #F0F0F1;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: none;
+      color: #004076;
+    }
+
+    .pill-button:hover {
+      background-color: #c4e0fb;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #a9d0f7;
+      padding: 40px 0;
+    }
+
+    #footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    /* ===== MOBIL ===== */
+    @media (max-width: 768px) {
+      .game-content,
+      .cigarette-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #options {
+        grid-template-columns: 1fr;
+      }
+    }
