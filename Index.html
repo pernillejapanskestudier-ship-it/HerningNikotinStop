@@ -14,9 +14,9 @@
   </head>
   <body>
     <!--navigationsbar start-->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Hovednavigation">
       <div class="logo">
-        <a href="Index.html">
+        <a href="Index.html" aria-label="Gå til startsiden">
           <img src="Images/hk_logo_bred_cmyk-ved-siden-af-logo.png" alt="Herning Kommune Logo" />
         </a>
       </div>
@@ -27,7 +27,7 @@
     <span></span>
   </div>
 
-      <ul class="nav-links">
+      <ul id="main-navigation" class="nav-links">
         <li class="dropdown">
           <a href="Ungedeler.html">Unge deler</a>
           <ul class="dropdown-content">
@@ -56,24 +56,17 @@
     </nav>
     <!--navigationsbar slut-->
 
-    <!--Helte billede og tekst container-->
-   
-    <div class="Tak-kort">
-      <h1 class="Hero-title">Har du overvejet nikotin stop?</h1>
+    <!--Hero banner with title -->
+    <div class="banner-container">
+      <img class="banner-image" src="Images/Smoke-Halv.jpg" alt="Røg på en mørk baggrund" />
+      <div class="Tak-kort">
+        <h1 class="Hero-title">Har du overvejet nikotin stop?</h1>
       </div>
-      <div class="banner-container">
-      <img
-        class="banner-image"
-        src="Images/Smoke-Halv.jpg"
-        alt="Røg på en mørk baggrund"
-      />
     </div>
 
-    <!--Helte billede og tekst container slut-->
-
-    <!--intro tekst/mini heroes-->
-
-    <div id="mini-heroes-container">
+    <!-- Intro text / mini-heroes -->
+    <main>
+      <section id="mini-heroes-container">
       <div class="aabne-tekst">
         <div class="mini-heroes">
           <img
@@ -90,7 +83,6 @@
             Nikotinen passer ind i alle sammenhæng og er blevet en naturlig del
             af samfundet som noget man selv skal vælge til eller fra.
           </p>
-          <br />
           <p>
             Men er det stadig et valg du føler du har? Afhængighed kan nemt
             blive del af os. Og hvis du føler det kunne være interessant at se
@@ -128,17 +120,19 @@
           </p>
         </div>
       </div>
-    </div>
-    <!--slut på intro tekster/mini heroes-->
+      </section>
+    </main>
 
-    <!--call to action :D-->
-    <h1>Læs mere om vores kursus eller tilmeld dig i dag</h1>
+    <!-- Call to action -->
+    <section class="cta">
+      <h2 class="cta-title">Læs mere om vores kursus eller tilmeld dig i dag</h2>
 
-    <!-- Two buttons for navigation -->
-    <div class="button-row">
+      <!-- Two buttons for navigation -->
+      <div class="button-row">
       <a href="Laesmere.html" class="pill-button">Læs mere</a>
       <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
     </div>
+    </section>
 
     <!--footer start-->
     <footer>
@@ -204,5 +198,6 @@
       </div>
     </footer>
     <!--footer slut :)-->
+    <script src="script.js"></script>
   </body>
 </html>

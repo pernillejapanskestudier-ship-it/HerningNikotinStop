@@ -22,7 +22,13 @@
         </a>
       </div>
 
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="main-navigation" class="nav-links">
         <li class="dropdown">
           <a href="Ungedeler.html">Unge deler</a>
           <ul class="dropdown-content">
@@ -55,49 +61,49 @@
 
   <header class="page-header">
     <h1>Test dig selv</h1>
-    <p>Leg, lær og bliv klogere på nikotin – sammen med Nikotinmanden</p>
+    <p>Leg, lær og bliv klogere på nikotin sammen med Nikotinmanden</p>
   </header>
 
-  <section class="game-card">
-    <div class="game-content">
-      <div>
+  <div class="main-layout">
+    <section class="nikotinmand-quiz-section game-card">
+      <div class="nikotinmand-section">
+        <img src="Images/NikotinManden.png" alt="Nikotinmanden">
+      </div>
+
+      <div class="quiz-section">
         <h2>Nikotin Quizzen</h2>
         <div id="quiz">
           <div id="question"></div>
           <div id="options"></div>
         </div>
+        <script src="Quizscript.js" defer></script>
       </div>
+    </section>
 
-      <div class="nikotinmand-section">
-        <img src="Images/NikotinManden.png" alt="Nikotinmanden">
+    <section class="snus-section game-card light">
+      <h2>Check din sundhed</h2>
+      <div class="snus-container">
+        <div class="teeth" id="teeth"></div>
+        <p id="label">Sunde hvide tænder, ingen snus!</p>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="0" id="slider">
+        </div>
       </div>
-    </div>
-    <script src="Quizscript.js" defer></script>
-  </section>
+      
+    </section>
 
-  <section class="game-card light">
-    <h2>Check din sundhed</h2>
-    <div class="snus-container">
-      <div class="teeth" id="teeth"></div>
-      <p id="label">Sunde hvide tænder, ingen snus!</p>
-      <div class="slider-container">
-        <input type="range" min="0" max="100" value="0" id="slider">
+    <section class="cigarette-section game-card light">
+      <h2>Hvad koster rygning?</h2>
+      <div class="cigarette-container">
+        <div class="stats">
+          <p>Smøger røget: <span id="cigCount">0</span></p>
+          <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
+        </div>
+        <img id="smoker" src="Images/frame1.png" alt="ryger">
+        <audio id="coughSound" src="Images/cough.mp3"></audio>
       </div>
-    </div>
-    <script src="script.js" defer></script>
-  </section>
-
-  <section class="game-card light">
-    <h2>Hvad koster rygning?</h2>
-    <div class="cigarette-container">
-      <div class="stats">
-        <p>Smøger røget: <span id="cigCount">0</span></p>
-        <p>Penge brugt: <span id="moneySpent">0</span>,-</p>
-      </div>
-      <img id="smoker" src="Images/frame1.png" alt="ryger">
-      <audio id="coughSound" src="Images/cough.mp3"></audio>
-    </div>
-  </section>
+      </section>
+  </div>
 
   <section class="cta-section">
     <h2>Klar til næste skridt?</h2>
@@ -108,7 +114,7 @@
   </section>
 
 </main>
-<!--footer start-->
+  <!--footer start-->
     <footer>
       <!-- Inner container with centered flexbox layout -->
       <div id="footer-container">
@@ -172,5 +178,6 @@
       </div>
     </footer>
     <!--footer slut :)-->
+    <script src="script.js"></script>
   </body>
 </html>

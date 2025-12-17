@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="stylecheet.css">
 
 </head>
-<body>
+<body class="page-ungedeler">
     <!--navigationsbar start-->
     <nav class="navbar">
       <div class="logo">
@@ -22,7 +22,13 @@
         </a>
       </div>
 
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="main-navigation" class="nav-links">
         <li class="dropdown">
           <a href="Ungedeler.html">Unge deler</a>
           <ul class="dropdown-content">
@@ -57,11 +63,12 @@
 
 <!--Unge stories/Måske videoer i fremtiden-->
     <div class="Ungefortaeller-container">
-      <div class="svg-container-UngeDeler">
+      <div class="svg-container-UngeDeler blueman-ungedeler">
         <svg
-          id="Blåmand"
+          class="blaamand"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 419.12 439.69"
+          style="height:192px !important; width:auto !important;"
         >
           <path
             class="cls-1"
@@ -90,11 +97,12 @@
         trangen, ændre mine rutiner og bygge nye vaner op. Det var hårdt, men
         jeg stod ikke alene. Og pludselig en dag gik det op for mig, at jeg
         faktisk var stoppet. Det føltes som at få friheden tilbage. Jeg troede
-        aldrig, jeg kunne – men jeg gjorde det.
+        aldrig, jeg kunne men jeg gjorde det.
       </p>
       </div>
     </div>
 
+      
     <div class="Ungefortaeller-container">
             <div class="ungefortæller">
       <h3>Jeppe modige historie</h3>
@@ -107,11 +115,12 @@ Fællesskabet gjorde noget ved mig. Det tog styrken ud af afhængigheden. Og for
 Så jeg gjorde det. Jeg stoppede med at ryge for alvor,  og jeg har ikke set mig tilbage siden.
       </p>
       </div>
-      <div class="svg-container-UngeDeler">
+      <div class="svg-container-UngeDeler blueman-ungedeler">
         <svg
-          id="Blåmand"
+          class="blaamand"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 419.12 439.69"
+          style="height:192px !important; width:auto !important;"
         >
           <path
             class="cls-1"
@@ -128,12 +137,13 @@ Så jeg gjorde det. Jeg stoppede med at ryge for alvor,  og jeg har ikke set mig
       </div>
     </div>
 
-     <div class="Ungefortaeller-container">
-      <div class="svg-container-UngeDeler">
+    <div class="Ungefortaeller-container">
+     <div class="svg-container-UngeDeler blueman-ungedeler">
         <svg
-          id="Blåmand"
+          class="blaamand"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 419.12 439.69"
+          style="height:192px !important; width:auto !important;"
         >
           <path
             class="cls-1"
@@ -190,10 +200,10 @@ Så jeg tilmeldte mig kampagnen og begyndte et stopforløb. Det var første gang
 </div>
 
   <p class="card-text">En rolig fælles gåtur i en park eller ved vandet, hvor deltagerne går i små grupper og snakker om deres udfordringer, fremskridt og mål. </p>
-   <br> <!-- Et lille mellemrum mellem paragrapherne -->
+   
    <p class="card-text">Efter gåturen kan man slutte af med gratis te/vand og små reflektionskort, som hjælper samtalen i gang.</p>
 
-  <button class="card-button"><a href="Tilmeldning.html">Tilmeld</a></button>
+  <a class="card-button" href="Tilmeldning.html">Tilmeld</a>
 </div>
 
 <!--kort 2-->
@@ -209,11 +219,11 @@ Så jeg tilmeldte mig kampagnen og begyndte et stopforløb. Det var første gang
 </div>
 
   <p class="card-text">Et kreativt fællesrum, hvor deltagerne kan male på lærred, tegne eller lave små “nikotinfri vision boards”.</p>
-    <br>
+    
     <p class="card-text">
  Det giver noget at lave med hænderne, især godt for dem, der normalt bruger cigaretter eller snus.</p>
 
-  <button class="card-button"><a href="Tilmeldning.html">Tilmeld</a></button>
+  <a class="card-button" href="Tilmeldning.html">Tilmeld</a>
 </div>
 
 <!--kort 3-->
@@ -238,19 +248,19 @@ Der bliver plads til både grin og seriøs snak, og fokus er på at være social
 </svg> <!-- SVG er bare billede filen -->
 </div>
 
-  <button class="card-button"><a href="Tilmeldning.html">Tilmeld</a></button>
+  <a class="card-button" href="Tilmeldning.html">Tilmeld</a>
 </div>
 </div>
 <!--slut af kort-->
 
 <!--call to action :D-->
-    <h1>Læs mere om vores kursus eller tilmeld dig i dag</h1>
-
-    <!-- Two buttons for navigation -->
-    <div class="button-row">
-      <a href="Laesmere.html" class="pill-button">Læs mere</a>
-      <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
-    </div>
+    <section class="cta-section">
+      <h2 class="cta-title">Læs mere om vores kursus eller tilmeld dig i dag</h2>
+      <div class="button-row">
+        <a href="Laesmere.html" class="pill-button">Læs mere</a>
+        <a href="Tilmeldning.html" class="pill-button">Tilmeld</a>
+      </div>
+    </section>
 
 
 <!--footer start-->
@@ -317,5 +327,6 @@ Der bliver plads til både grin og seriøs snak, og fokus er på at være social
       </div>
     </footer>
     <!--footer slut :)-->
+    <script src="script.js"></script>
   </body>
 </html>
