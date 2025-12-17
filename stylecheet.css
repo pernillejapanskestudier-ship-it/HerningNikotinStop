@@ -812,6 +812,23 @@ footer {
 
 
 /* chatgbt løsning til test dig selv */
+
+/* hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: #004076;
+  border-radius: 2px;
+}
+
+
 /* ===== RESET ===== */
     * {
       margin: 0;
@@ -1043,3 +1060,154 @@ footer {
         grid-template-columns: 1fr;
       }
     }
+
+
+    /* mobil css responsive */
+    @media (max-width: 600px) {
+
+  /* === TEKST === */
+  h1 {
+    font-size: 2rem;
+    margin-top: 80px;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    padding: 0 12px;
+  }
+
+  /* === HERO === */
+  .Hero-title {
+    font-size: 2.5rem;
+  }
+
+  #Hero-title-undertekst {
+    font-size: 1.2rem;
+  }
+
+  /* === NAVBAR === */
+  .navbar {
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* === MINI HERO SECTIONS === */
+  .aabne-tekst {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mini-heroes {
+    width: 90%;
+  }
+
+  #PigeDerRyger,
+  #DudeMedGruppe {
+    width: 100%;
+  }
+
+  /* === STOPLINJE === */
+  .stoplinien-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* === FORM === */
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  /* === CARDS === */
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-body {
+    width: 90%;
+  }
+
+  /* === QUIZ / GAME === */
+  .nikotinmand-quiz-section,
+  .cigarette-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #options {
+    grid-template-columns: 1fr;
+  }
+
+  /* === FOOTER === */
+  #footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* Tablet responsive */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .Hero-title {
+    font-size: 3.5rem;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .aabne-tekst {
+    flex-direction: column;
+  }
+
+  .card-body {
+    width: 45%;
+  }
+
+  .cigarette-container {
+    gap: 20px;
+  }
+
+  .diagram-row {
+    padding: 0 8%;
+  }
+}
+
+
+/* pc plus ekstra */
+@media (min-width: 1025px) {
+  .card-body {
+    width: 22%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section { /* ungår brede layouts */
+  max-width: 1200px;
+  margin: 0 auto;
+}
