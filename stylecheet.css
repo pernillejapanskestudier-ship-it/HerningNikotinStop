@@ -333,8 +333,9 @@ body {
     background-color: #A0D1FB;
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     padding: 20px;
-    margin-top: 8%;
-    display: flex; /* place svg and text side-by-side */
+  margin: 8% auto; /* center the section horizontally */
+  max-width: 1000px; /* limit width so margin auto actually centers */
+  display: flex; /* place svg and text side-by-side */
     align-items: flex-start;
     gap: 20px;
 }
@@ -358,7 +359,8 @@ body {
     justify-content: center;
     margin-bottom: 12px;
   }
-  .stoplinien { text-align: center; }
+  /* Keep Stoplinien text left-aligned on all viewport sizes */
+  .stoplinien { text-align: left; }
 }
 .svg-container {
     display: flex;
