@@ -25,6 +25,7 @@ p {
     color: #004076;
     font-family:  Jakarta Sans, sans-serif;
     text-align: center;
+  line-height: 48px;
 }
 
 body {
@@ -553,7 +554,7 @@ button:hover {
 }
 
 .cigarette-container p {
-    line-height: 1.2;
+  line-height: 48px;
     font-family: Jakarta Sans, sans-serif;
 }
 
@@ -656,7 +657,7 @@ button:hover {
     font-size: 0.95rem;     /* samme prencip, 32/16=2rem */
     margin-bottom: 12px;
     color: #004076;
-    line-height: 1.45;
+  line-height: 48px;
 }
 .ungedeler-kort-logo img {
   width: auto;          /* prevent squashing horizontally */
