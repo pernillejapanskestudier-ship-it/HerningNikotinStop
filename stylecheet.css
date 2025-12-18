@@ -1,13 +1,10 @@
-/* Moderne CSS Reset */
 * {
-  border: 0;
-  box-sizing: border-box;
-  font-family: Jakarta Sans, sans-serif;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-/* Final override moved to end of file to ensure it overrides earlier rules */
+/* Slut på CSS-reset */
 
 /* ===== GLOBAL STYLES ===== */
 h1, h2, h3, h4, h5, h6 {
@@ -28,11 +25,14 @@ p {
     color: #004076;
     font-family:  Jakarta Sans, sans-serif;
     text-align: center;
+  line-height: 48px;
 }
 
+/* Utility: specific 24px line-height for selected paragraphs */
+.lh-24 { line-height: 24px !important; }
+
 body {
-  background-color: #F0F0F1;
-  color: #004076;
+    color: #F0F0F1;
 }
 
 
@@ -40,38 +40,47 @@ body {
 /* Hero banner/billede & Titel */
 .banner-container {
     position: relative;
-  margin-bottom: 32px; /* give space below hero so following content isn't too close */
 }
 .banner-image {
     width: 100%;
-    height: auto;
+  height: auto;
     display: block;
     z-index: 1;
+  object-fit: cover; /* allows fixed heights at smaller viewports without distortion */
 }
 .Tak-kort {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+  /* Center the block, but show only text (no box styling) */
+  margin: 0; /* remove horizontal offset */
+  text-align: left; /* ensure left-aligned text inside content */
+  align-items: flex-start; /* left-align flex children in column */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 8px; /* tighter spacing so the button is visible without scrolling */
     text-align: center;
 
     z-index: 2;  /* Dette gør at containeren med dette content i liger ovenpå banneret. Det er basicly 'layers' */
 }
 .Hero-title {
-  color: #DCEEFE;
-  font-size: 5rem;
-  font-weight: bold;
-  font-style: italic;
+    font-family: Jakarta Sans, sans-serif;
+    color: #DCEEFE;
+    font-size: 5rem;
+    font-weight: bold;
+    font-style: italic;
+  margin-bottom: 0; /* reduce extra space below the title */
+
+    z-index: 2;
 }
 #Hero-title-undertekst {
-  color: #DCEEFE;
-  font-size: 2rem;
-  font-style: italic;
+    font-family: Jakarta Sans, sans-serif;
+    color: #DCEEFE;
+  font-size: 1.25rem; /* slightly smaller subtitle */
+    font-style: italic;
+  margin-bottom: 4px; /* reduce space below subtitle */
 }
 
 /* Navigationsbaren */
@@ -133,21 +142,22 @@ body {
 
 /* --- LOGO --- */
 .logo img {
-  height: 60px;
-  width: auto;
-  padding-top: 6%;
+    height: 60px;  /* Matcher højden på billedet */
+    width: auto;
+    padding-top: 6%;
 }
 
 /* --- MENUPUNKTERNE --- */
 .nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  align-content: center;
-  color: #004076;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+     font-family:  Jakarta Sans, sans-serif;
+    color: #004076;
 }
 
 .nav-links a {
@@ -236,131 +246,83 @@ body {
   opacity: 1;
 }
 /* Forsidens to sektioner hvor der er billed & teskt - bliver også brugt på raekudsiden */
-.Ungefortaeller-container {
-  display: flex;
-  gap: 20px; /* space between svg and text */
-  align-items: stretch; /* make svg column match the height of the text column */
-  justify-content: center; /* center the whole block on the page */
-  padding: 20px;
-  flex-wrap: wrap;
-  /* shrink-to-fit so the combined svg+text block is centered exactly */
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-.svg-container-UngeDeler {
-    flex: 0 0 auto; /* size to content, allow height stretching */
+#mini-heroes-container {
+    flex-direction: column; /* Gør at billedet kommer før teksten */
     display: flex;
+    gap: 20px;
     justify-content: center;
-  align-items: stretch; /* let svg fill the container height */
-    padding-top: 6px; /* small vertical offset so svg aligns nicely with heading */
-}
-.svg-container-UngeDeler svg {
-  /* make SVG fill the container height so it matches the text column */
-  height: 100%;
-  width: auto;
-  max-width: none; /* allow width to scale naturally from height */
-  max-height: none;
-  display: block;
-}
-
-/* Nudge Unge-fortæller SVGs slightly taller than the text column (approx 2cm)
-   Apply only on larger screens where layout is side-by-side */
-@media (min-width: 701px) {
-  .page-ungedeler .Ungefortaeller-container .svg-container-UngeDeler svg {
-    height: calc(100% + 6cm) !important;
-  }
-}
-
-/* Simple rule to make the Unge story SVGs larger across desktop/tablet
-   If JS is also setting heights, this CSS uses !important to ensure visible increase. */
-@media (min-width: 701px) {
-  .page-ungedeler .Ungefortaeller-container .svg-container-UngeDeler svg,
-  .page-ungedeler .Ungefortaeller-container svg.blaamand {
-    height: calc(100% + 6cm) !important;
-    width: auto !important;
-    max-width: none !important;
-    display: block !important;
-  }
-}
-.ungefortæller {
-    max-width: 700px;
-    text-align: left !important; /* ensure left alignment on all devices */
-}
-
-@media (max-width: 700px) {
-  .Ungefortaeller-container {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center; /* keep the stacked block centered while text remains left-aligned */
-    width: 100%;
-  }
-  .svg-container-UngeDeler {
-    flex: 0 0 auto;
-    padding-top: 0;
     align-items: center;
-  }
-  .svg-container-UngeDeler svg {
-    width: 180px; /* fixed width on small screens — increased */
-    height: auto; /* natural height when stacked */
-  }
-  .ungefortæller {
-    width: 100%;
-  }
+  margin-top: 40px; /* add clear gap from the top section */
 }
-
-/* Center SVGs on tablet and mobile so they sit in the middle of the stacked block */
-@media (max-width: 1024px) {
-  .Ungefortaeller-container {
-    align-items: center; /* center columns */
-    width: 100%;
-  }
-  .svg-container-UngeDeler {
-    margin: 0 auto;
-    align-self: center;
+.aabne-tekst {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.indhold {
+    display: flex;
+    flex-direction: column; /*gør at teksten står under hinanden*/
+    gap: 12px;
+  max-width: 700px; /* give the intro text more width */
+}
+/* Ensure intro text in mini-heroes is left-aligned */
+#mini-heroes-container .indhold h1,
+#mini-heroes-container .indhold h2,
+#mini-heroes-container .indhold h3,
+#mini-heroes-container .indhold h4,
+#mini-heroes-container .indhold h5,
+#mini-heroes-container .indhold h6,
+#mini-heroes-container .indhold p {
+  text-align: left;
+}
+.mini-heroes {
     display: flex;
     justify-content: center;
-  }
-  .svg-container-UngeDeler svg {
-    margin: 0 auto;
-    display: block;
-    width: 180px;
-    height: auto;
-  }
+    align-items: center;
+    border-radius: 40px;
+    background-color: #E8F1FF;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    padding: 8px;
 }
+#PigeDerRyger, #DudeMedGruppe { /* dette er selve billederne uden deres container */
+    width: 250px;
+    height: auto;
+    border-radius: 40px;
+}
+
+/* Stoplinien blå sektion */
 .stoplinien-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     background-color: #A0D1FB;
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     padding: 20px;
-  margin: 8% auto; /* center the section horizontally */
-  max-width: 1000px; /* limit width so margin auto actually centers */
-  display: flex; /* place svg and text side-by-side */
-    align-items: flex-start;
-    gap: 20px;
+    margin-top: 8%;
 }
-.stoplinien-container .svg-container {
-  justify-content: flex-start; /* keep svg flush left inside its container */
-  padding: 8px; /* slightly tighter padding when inline */
+.stoplinien-container .stoplinien-container {
+  /* Remove inner card effect inside the blue section */
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
 }
 .stoplinien {
-    display: block;
-    max-width: 700px;
-    margin-left: 0;
-    text-align: left; /* keep content left-aligned beside svg */
-}
-
-/* Responsive: stack svg above text on small screens */
-@media (max-width: 700px) {
-  .stoplinien-container {
-    display: block;
-  }
-  .svg-container {
+    display: flex;
+    flex-direction:column;
     justify-content: center;
-    margin-bottom: 12px;
-  }
-  /* Keep Stoplinien text left-aligned on all viewport sizes */
-  .stoplinien { text-align: left; }
+    max-width: 700px;
+    margin-left: 20px;
+  text-align: left; /* ensure left-aligned text inside content */
+}
+.stoplinien h1,
+.stoplinien h2,
+.stoplinien h3,
+.stoplinien h4,
+.stoplinien h5,
+.stoplinien h6,
+.stoplinien p {
+  text-align: left; /* override global center alignment for headings and paragraphs */
 }
 .svg-container {
     display: flex;
@@ -374,17 +336,6 @@ body {
       }
     width: 200px;
     height: auto;
-}
-
-/* Support the new svg class used in multiple places */
-.blaamand {
-  /* let the svg size be determined by its container height so it matches text */
-  width: auto;
-  height: 100%;
-  max-width: none;
-}
-.blaamand .cls-1 {
-  fill: #124173;
 }
 
 /* ===== FORMULAR STYLES ===== */
@@ -460,21 +411,22 @@ select {
 
 
 
-/* Primary button (consolidated for form buttons, quiz options, cards) */
+/* Knappen Tilmeld på formularen */
 button {
-  background-color: #F0F0F1;
-  border: 3px solid #004076;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #004076;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 auto;
+    background-color: #F0F0F1;
+    border: 3px solid #004076;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #004076;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-button:hover { background-color: #c4e0fb; }
+button:hover {
+    background-color: #c4e0fb;
+}
 
 /* Knapperne i bunden på hvert site */
 
@@ -597,7 +549,7 @@ button:hover { background-color: #c4e0fb; }
 .stats p {
   font-size: 1rem;
   margin: 2px;
-  font-weight: bold;
+    font-weight: 400; /* normal weight for bread text */
 }
 
 .game-container {
@@ -619,7 +571,7 @@ button:hover { background-color: #c4e0fb; }
 }
 
 .cigarette-container p {
-    line-height: 1.2;
+  line-height: 48px;
     font-family: Jakarta Sans, sans-serif;
 }
 
@@ -643,7 +595,7 @@ button:hover { background-color: #c4e0fb; }
   margin-top: 15px;
   font-size: 16px;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
 }
 
 /* Quiz styles */
@@ -666,6 +618,20 @@ button:hover { background-color: #c4e0fb; }
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #004076;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c4e0fb;
 }
 
 /* End of Quiz styles */
@@ -703,18 +669,25 @@ button:hover { background-color: #c4e0fb; }
     font-weight: 700;
     font-style: italic;
     text-align: center;
+  line-height: 24px; /* tighter heading leading inside cards */
 }
 .card-text {
     font-size: 0.95rem;     /* samme prencip, 32/16=2rem */
     margin-bottom: 12px;
     color: #004076;
-    line-height: 1.45;
+  line-height: 24px; /* override global leading for card paragraphs */
+}
+/* Ensure any paragraph inside a card uses compact leading */
+.card-body p { 
+  line-height: 24px; 
 }
 .ungedeler-kort-logo img {
-    height: 38px;  /* Matcher højden på billedet */
-    width: auto;
-    text-align: center;
-    margin-bottom: 10px;
+  width: auto;          /* prevent squashing horizontally */
+  height: auto;         /* maintain natural aspect ratio */
+  max-height: 38px;     /* cap size for consistent layout */
+  text-align: center;
+  margin-bottom: 10px;
+  object-fit: contain;  /* extra safety if constraints are applied */
 }
 .card-button {
     display: block;
@@ -734,73 +707,54 @@ button:hover { background-color: #c4e0fb; }
     cursor: pointer;
     text-decoration: none;
 }
-  /* Ensure anchors inside card buttons don't look like links (no underline, no purple color) */
-  .card-button a {
-    color: inherit !important;
-    text-decoration: none !important;
-    display: inline-block;
-    padding: 0;
-    font-weight: inherit;
-  }
+
+/* Remove default link styling inside card buttons */
+.card-button a,
+.card-button a:link,
+.card-button a:visited,
+.card-button a:hover,
+.card-button a:active {
+  color: #004076;          /* keep same dark blue as button */
+  text-decoration: none;   /* no underline in any state */
+  display: inline-block;   /* behave like button text */
+}
 /* Ungedeler Kort styles slut*/
 
 /* Ungedeler med mere */
 
 .Ungefortaeller-container {
     display: flex;
-    gap: 20px; /* space between svg and text */
-    align-items: flex-start;
-    justify-content: flex-start;
+  gap: 24px; /* add breathing room between image and text */
+align-items: center;
+    justify-content: center;
     padding: 20px;
-    flex-wrap: wrap;
 }
 .svg-container-UngeDeler {
-    flex: 0 0 140px; /* reserve space for the svg */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 6px; /* small vertical offset so svg aligns with heading */
+  flex: 0 0 280px; /* consistent image column width */
+  display: flex;
+  justify-content: center;
 }
-.svg-container-UngeDeler svg {
-    width: 120px;
-    height: auto;
+.svg-container-UngeDeler img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;   /* keep same size without squashing */
+  border-radius: 40px; /* soft corners */
 }
 .ungefortæller {
-    max-width: 700px;
-    text-align: left !important; /* ensure left alignment on all devices */
+    max-width: 700px; 
 }
 
-/* Override global heading/paragraph centering for these story blocks */
-.ungefortæller h1,
-.ungefortæller h2,
-.ungefortæller h3,
-.ungefortæller h4,
-.ungefortæller p,
-.ungefortæller li {
-  text-align: left !important;
-  margin-left: 0;
-}
-
-/* Constrain the SVG so it doesn't dominate layout and ensure gap applies */
-.Ungefortaeller-container .svg-container-UngeDeler svg {
-  width: 120px !important;
-  height: auto !important;
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .Ungefortaeller-container {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start; /* keep text left-aligned when stacked */
-  }
-  .svg-container-UngeDeler {
-    flex: 0 0 auto;
-    padding-top: 0;
-  }
-  .svg-container-UngeDeler svg {
-    width: 140px; /* slightly larger on smaller screens for visibility */
-  }
+/* Ensure text inside Ungefortaeller-container is left-aligned
+   while the overall section stays centered on the page */
+.Ungefortaeller-container .ungefortæller,
+.Ungefortaeller-container p,
+.Ungefortaeller-container h1,
+.Ungefortaeller-container h2,
+.Ungefortaeller-container h3,
+.Ungefortaeller-container h4,
+.Ungefortaeller-container h5,
+.Ungefortaeller-container h6 {
+  text-align: left;
 }
 .Collage-picture-container {
     width: 100%;
@@ -808,17 +762,11 @@ button:hover { background-color: #c4e0fb; }
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-top: 56px; /* increased breathing room above collage */
+  margin-top: 60px; /* add distance from previous section */
 }
 .Collage-picture {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 700px) {
-  .Collage-picture-container {
-    margin-top: 32px; /* slightly smaller gap on narrow screens */
-  }
+max-width: 100%;
+height: auto;
 }
 .Moter-andre-container {
     display: flex;
@@ -875,13 +823,28 @@ footer {
     width: 100%;
     padding: 0 20px;
 }
+/* Ensure footer body text is left-aligned regardless of global centering */
+footer p {
+  text-align: left;
+  line-height: 24px; /* override global 48px for footer bread text */
+}
 /* SVG styles start for Læs mere */
+.laesmere-page,
+.laesmere-page p,
+.laesmere-page h1,
+.laesmere-page h2,
+.laesmere-page h3,
+.laesmere-page h4,
+.laesmere-page h5,
+.laesmere-page h6 {
+  line-height: 48px;
+}
 .diagram-row {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
+  justify-content: center;
     padding: 0 16%;
     width: 100%;
 }
@@ -937,20 +900,18 @@ footer {
 #Blok-diagram .st2 { fill: #5ea4da; }
 #Blok-diagram .st3 { fill: #3a7bbe; }
 #Blok-diagram .st4 { fill: #226eb6; }
-/* SVG styles end */
+/* Slut på SVG-styles */
 
 
-/* chatgbt løsning til test dig selv */
+/* Løsning til 'Test dig selv' */
 
-/* hamburger menu */
+/* Hamburger-menu */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
 }
-
-.hamburger { touch-action: manipulation; }
 
 .hamburger span {
   width: 28px;
@@ -959,72 +920,32 @@ footer {
   border-radius: 2px;
 }
 
-/* Mobile / Hamburger styles */
-@media (max-width: 900px) {
-  .hamburger {
-    display: flex;
-    margin-left: 16px;
-    /* make hamburger fixed above the overlay so it remains clickable when overlay is open */
-    position: fixed;
-    top: 14px;
-    right: 18px;
-    z-index: 10003;
-    background: transparent;
-    padding: 8px;
-    border-radius: 8px;
-  }
 
-  /* hide main nav by default on mobile */
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 90px; /* below navbar */
-    right: 16px;
-    background: #98CDFB;
-    border-radius: 12px;
-    padding: 12px;
-    flex-direction: column;
-    gap: 12px;
-    width: calc(100% - 32px);
-    max-width: 360px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    z-index: 1002;
-  }
+/* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: 0;
+    }
 
-  .nav-links.mobile-open {
-    display: flex;
-  }
+    body {
+      font-family: Jakarta Sans, sans-serif;
+      background-color: #F0F0F1;
+      color: #004076;
+    }
 
-  .nav-links a, .nav-links .tilmeld-btn {
-    font-size: 18px;
-    padding: 8px 12px;
-    text-align: left;
-  }
+    h1, h2, h3 {
+      color: #004076;
+      text-align: center;
+      font-style: italic;
+    }
 
-  /* make dropdowns behave as nested lists on mobile */
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background: transparent;
-    padding-left: 8px;
-  }
+    p {
+      text-align: center;
+    }
 
-  .dropdown > a::after {
-    content: "▾";
-    float: right;
-  }
-}
-
-/* Animated hamburger open state */
-.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-
-
-/* Duplicate reset removed — global reset defined at top of file */
-
-    /* ===== NAVBAR ===== */
+    /* Navigationsbar */
     .navbar {
       position: fixed;
       top: 0;
@@ -1066,7 +987,7 @@ footer {
       border: 2px solid #004076;
     }
 
-    /* ===== PAGE ===== */
+    /* Side */
     .test-dig-selv-page {
       padding-top: 140px;
     }
@@ -1091,9 +1012,58 @@ footer {
       border-radius: 25px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
+    /* medium width variant for quiz card to better fit contents */
+    .game-card.medium-card {
+      max-width: 900px;
+    }
+    /* tighter space below the top quiz card on Test dig selv */
+    .test-dig-selv-page .game-card.medium-card {
+      margin-bottom: 24px; /* override default 60px bottom margin */
+    }
+    /* narrower variant for specific cards */
+    .game-card.narrow-card {
+      max-width: 460px; /* tighten the box further */
+      padding: 28px;    /* slightly tighter inner padding */
+    }
+    /* add breathing room below narrow-card titles */
+    .game-card.narrow-card h2 {
+      margin-bottom: 16px;
+    }
+    /* tighter spacing inside the narrow card */
+    .game-card.narrow-card .cigarette-container {
+      gap: 2px;
+    }
+    /* Stack snus items vertically inside narrow cards */
+    .game-card.narrow-card .snus-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
 
     .game-card.light {
       background-color: #E8F1FF;
+    }
+
+    /* Row to place two narrow cards side by side and centered */
+    .two-card-row {
+      display: flex;
+      justify-content: center;   /* center the pair as a group */
+      align-items: stretch;      /* make both cards equal height */
+      gap: 24px;                 /* space between the two cards */
+      max-width: 900px;          /* match the quiz card width */
+      margin: 16px auto 32px;    /* tighter gap above, slightly reduced below */
+    }
+    /* Remove extra outer margins when cards are inside the row and ensure equal heights */
+    .two-card-row .game-card {
+      margin: 0;
+      align-self: stretch;
+      display: flex;             /* allow inner content to layout vertically */
+      flex-direction: column;
+      flex: 0 1 calc(50% - 12px); /* split the row width evenly minus half the gap */
+    }
+    /* allow narrow cards inside the row to expand to half width rather than fixed max */
+    .two-card-row .game-card.narrow-card {
+      max-width: none;
     }
 
     .game-content {
@@ -1137,9 +1107,10 @@ footer {
     /* ===== SNUS ===== */
     .snus-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+      flex-direction: row;        /* items side-by-side */
+      align-items: center;        /* vertical alignment */
+      justify-content: flex-start;/* align group to the left */
+      gap: 20px;                  /* spacing between items */
     }
 
     .teeth {
@@ -1164,7 +1135,16 @@ footer {
       display: flex;
       align-items: center;
       gap: 40px;
-      justify-content: center;
+        justify-content: flex-start; /* keep content left; image will push right */
+    }
+    .cigarette-container #smoker {
+      margin-left: auto; /* push the image to the right side */
+    }
+    .cigarette-container audio {
+      display: none; /* hide audio element to prevent layout gaps */
+    }
+    .cigarette-container p {
+      text-align: left; /* left-align the game text */
     }
 
     #smoker {
@@ -1181,29 +1161,6 @@ footer {
       padding: 80px 20px;
     }
 
-    /* space between CTA title and its supporting text */
-    .cta-section h1,
-    .cta-section h2,
-    .cta-section .cta-title,
-    .cta h1,
-    .cta h2,
-    .cta .cta-title {
-      margin-bottom: 28px;
-    }
-
-    /* ensure supporting paragraph doesn't collide with the title */
-    .cta-section p,
-    .cta p {
-      margin-top: 8px;
-    }
-
-    /* spacing between preceding content and CTA block (the markup uses `.cta`) */
-    .cta {
-      margin-top: 36px;
-      text-align: center;
-      padding: 20px 10px; /* keep it compact compared to .cta-section */
-    }
-
     .button-row {
       display: flex;
       justify-content: center;
@@ -1211,12 +1168,34 @@ footer {
       margin-top: 30px;
     }
 
-    /* pill-button duplicate removed — canonical definition exists earlier */
+    .pill-button {
+      padding: 12px 40px;
+      border-radius: 50px;
+      border: 3px solid #004076;
+      background-color: #F0F0F1;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: none;
+      color: #004076;
+    }
 
-    /* ===== FOOTER ===== */
+    .pill-button:hover {
+      background-color: #c4e0fb;
+    }
+
+    /* Footer */
     footer {
       background-color: #a9d0f7;
-      padding: 40px 0;
+      padding: 40px 0 64px; /* extra bottom space for corner note */
+      position: relative;    /* allow corner note positioning */
+    }
+    .footer-note {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      font-size: 12px;
+      color: #004076;
+      font-weight: 600;
     }
 
     #footer-container {
@@ -1229,8 +1208,81 @@ footer {
       padding: 0 20px;
     }
 
-    /* ===== MOBIL ===== */
+    /* Mobil */
     @media (max-width: 768px) {
+      /* Læs mere diagrams: show Title -> SVG -> Text on small screens */
+      .laesmere-page .diagram-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "svg"
+          "text";
+        row-gap: 12px;
+        width: 90%;
+      }
+      .laesmere-page .diagram-item svg { grid-area: svg; margin: 0 auto; }
+      .laesmere-page .diagram-item .diagram-text { grid-area: text; }
+      /* Ungefortaeller: reorder to Title -> Image -> Text on mobile */
+      .Ungefortaeller-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "title"
+          "image"
+          "text";
+        row-gap: 12px;
+      }
+      /* flatten the wrapper so its children can be placed in the grid */
+      .Ungefortaeller-container .ungefortæller { display: contents; }
+      .Ungefortaeller-container .ungefortæller h3 { grid-area: title; }
+      .Ungefortaeller-container .svg-container-UngeDeler { grid-area: image; justify-content: center; }
+      .Ungefortaeller-container .ungefortæller p { grid-area: text; }
+      /* Keep hamburger fixed in place and prevent it from moving when menu opens */
+      .navbar {
+        justify-content: flex-start;
+        padding: 10px 16px;
+        height: 80px;           /* fixed height so menu opens below */
+        flex-wrap: nowrap;
+        position: fixed;        /* ensure it's pinned at the top */
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      /* Show hamburger button and hide links until menu is opened */
+      .hamburger {
+        display: flex;
+        position: absolute;     /* pin to the right so it doesn't shift */
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;     /* render dropdown below the navbar */
+        top: 80px;              /* exactly below the fixed navbar */
+        left: 0;
+        right: 0;
+        background-color: #98CDFB;
+        padding: 12px 20px;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1001;
+      }
+      .navbar.menu-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      /* Make dropdowns static and visible under their parent in mobile */
+      .dropdown-content {
+        position: static;
+        display: block;
+        box-shadow: none;
+        background-color: transparent;
+        padding-left: 12px;
+      }
       .game-content,
       .cigarette-container {
         flex-direction: column;
@@ -1240,39 +1292,47 @@ footer {
       #options {
         grid-template-columns: 1fr;
       }
+      /* Stack the snus slider on small screens */
+      .snus-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Stack the two cards on small screens */
+      .two-card-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 95vw; /* make row comfortably fit small screens */
+      }
+      .two-card-row .game-card {
+        flex: 1 1 100%;
+        width: 100%;
+      }
     }
 
-/* Center footer on tablet and mobile for a cleaner stacked layout */
-@media (max-width: 1024px) {
-  #footer-container {
-    flex-direction: column;
-    align-items: center;
-    /* keep container centered while section content will be left-aligned */
-    gap: 24px;
-    padding: 0 12px;
-  }
 
-  /* Make footer sections take full width so content stacks nicely */
-  #footer-container .footer-info-section {
-    width: 100%;
-    max-width: 700px;
-    text-align: left; /* left-align content inside each footer block */
-    margin: 0 auto;   /* keep each block centered within the container */
-  }
-  /* keep the footer section headings centered for readability */
-  #footer-container .footer-info-section .footer-title {
-    text-align: center;
-  }
-}
-
-
-    /* mobil css responsive */
+    /* Mobil responsiv */
     @media (max-width: 600px) {
+  /* Flyt hero-titel tættere på navbar (mobil) */
+  .Tak-kort {
+    top: 35%;
+  }
+  /* Fast navbar øverst (mobil) */
+  .navbar {
+    height: 80px;
+    flex-wrap: nowrap;
+  }
+  /* Make hero banner taller on mobile */
+  .banner-image {
+    height: 75vh;   /* larger banner on phones */
+    object-fit: cover;
+  }
 
   /* === TEKST === */
   h1 {
     font-size: 2rem;
     margin-top: 80px;
+    font-weight: 400; /* normal weight for bread text */
   }
 
   h3 {
@@ -1313,67 +1373,12 @@ footer {
   }
 
   .mini-heroes {
-    /* shrink-wrap the card on small screens so padding is an even frame */
-    width: auto;
-    display: inline-flex;
-    margin: 36px auto; /* increased gap from hero */
+    width: 90%;
   }
 
-  /* mini-heroes: make images half size on mobile and give framed padding */
-  /* mobile: thinner frame, larger image */
-  .mini-heroes {
-    padding: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    margin: 36px auto; /* increased gap from hero */
-  }
-
-  /* mobile image slightly larger, fixed size for consistent framing */
   #PigeDerRyger,
   #DudeMedGruppe {
-    width: 180px; /* a bit bigger */
-    max-width: none;
-    display: block;
-    margin: 0;
-  }
-
-  /* container width equals image + left+right padding so gaps are equal */
-  .mini-heroes {
-    width: calc(180px + 20px); /* image width + 2*10px padding */
-  }
-
-  /* Make the banner bigger on small screens so title sits on image and requires scrolling */
-  .banner-container {
-    height: 85vh; /* larger hero area to emphasize image on mobile */
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 28px; /* ensure mobile has extra spacing below hero */
-  }
-
-  .banner-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* fill the taller hero area */
-    display: block;
-  }
-
-  .Tak-kort {
-    /* keep the title visually centered on the larger image */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    padding: 18px;
-    gap: 8px;
-  }
-
-  .Hero-title {
-    font-size: 3.6rem; /* larger title for bigger hero */
-    line-height: 1.02;
-    word-break: break-word;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
   }
 
   /* === STOPLINJE === */
@@ -1423,6 +1428,96 @@ footer {
 
 /* Tablet responsive */
 @media (min-width: 601px) and (max-width: 1024px) {
+  /* Læs mere diagrams: Title -> SVG -> Text on tablets */
+  .laesmere-page .diagram-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "svg"
+      "text";
+    row-gap: 14px;
+    width: 85%;
+  }
+  .laesmere-page .diagram-item svg { grid-area: svg; margin: 0 auto; }
+  .laesmere-page .diagram-item .diagram-text { grid-area: text; }
+  /* Ungefortaeller: reorder to Title -> Image -> Text on tablets */
+  .Ungefortaeller-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "text";
+    row-gap: 14px;
+  }
+  .Ungefortaeller-container .ungefortæller { display: contents; }
+  .Ungefortaeller-container .ungefortæller h3 { grid-area: title; }
+  .Ungefortaeller-container .svg-container-UngeDeler { grid-area: image; justify-content: center; }
+  .Ungefortaeller-container .ungefortæller p { grid-area: text; }
+  /* Nudge hero title a bit up on tablets */
+  .Tak-kort {
+    top: 45%;
+  }
+  /* Keep hamburger fixed in place and menu below bar on tablets */
+  .navbar {
+    justify-content: flex-start;
+    padding: 10px 20px;
+    height: 80px;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+  }
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0; right: 0;
+    background-color: #98CDFB;
+    padding: 14px 24px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+  .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  /* Make hero banner taller on tablets */
+  .banner-image {
+    height: 80vh;  /* larger banner on tablets */
+    object-fit: cover;
+  }
+  /* Tablet: show hamburger and collapsible menu */
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+  .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .dropdown-content {
+    position: static;
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 12px;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -1451,222 +1546,14 @@ footer {
   .diagram-row {
     padding: 0 8%;
   }
-
-  /* Slightly smaller hero on tablets so image doesn't dominate the viewport */
-  .banner-container {
-    height: 65vh;
-    overflow: hidden;
-  }
-
-  .banner-image {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* mini-heroes images slightly smaller on tablet */
-  /* mini-heroes on tablet: thinner frame and slightly larger images */
-  .mini-heroes { padding: 12px; }
-  #PigeDerRyger,
-  #DudeMedGruppe {
-    width: 160px; /* slightly larger on tablet */
-    max-width: none;
-    display: block;
-    margin: 0 auto;
-  }
-  /* container frames image exactly on tablet (image + 2*padding) */
-  .mini-heroes {
-    width: calc(160px + 24px);
-  }
-
 }
 
-  @media (max-width: 1024px) {
-    #footer-container {
-      flex-direction: column;
-      align-items: center;
-      /* keep container centered while section content will be left-aligned */
-      gap: 24px;
-      padding: 0 12px;
-    }
-
-    /* Make footer sections take full width so content stacks nicely */
-    #footer-container .footer-info-section {
-      width: 100%;
-      max-width: 700px;
-      text-align: left; /* left-align content inside each footer block */
-      margin: 0 auto;   /* keep each block centered within the container */
-    }
-    /* keep the footer section headings centered for readability */
-    #footer-container .footer-info-section .footer-title {
-      text-align: center;
-    }
-  }
 
 /* pc plus ekstra */
 @media (min-width: 1025px) {
   .card-body {
     width: 22%;
   }
-
-  /* increase gap between hero/banner and mini-heroes on larger screens */
-  .banner-container {
-    margin-bottom: 24px; /* smaller desktop spacing */
-  }
-
-  .mini-heroes {
-    margin: 16px auto; /* smaller desktop spacing */
-  }
-  /* left-align mini-heroes paragraph text on desktop only */
-  .aabne-tekst .indhold p,
-  .mini-heroes p {
-    text-align: left;
-  }
-}
-
-/* Layout for Testdigselv main layout and sections */
-.main-layout {
-  max-width: 1100px;
-  margin: 0 auto 60px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 0 20px;
-}
-
-/* Ensure nikotinmand + quiz align nicely and each take sensible width */
-.nikotinmand-quiz-section {
-  display: flex;
-  gap: 24px;
-  align-items: stretch; /* allow children to stretch to same height */
-}
-
-.nikotinmand-quiz-section .nikotinmand-section {
-  flex: 0 0 300px; /* fixed column for the character */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nikotinmand-quiz-section .nikotinmand-section img {
-  max-width: 100%;
-  height: auto;
-  width: 260px;
-}
-
-.nikotinmand-quiz-section .quiz-section {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Make quiz take full available width inside quiz-section */
-.nikotinmand-quiz-section .quiz-section #quiz {
-  margin: 0;
-  max-width: 100%;
-}
-
-/* Make snus and cigarette sections visually consistent and equal height */
-.snus-section,
-.cigarette-section {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.snus-container,
-.cigarette-container {
-  min-height: 340px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-/* Tweak smoker image for more compact layout */
-#smoker {
-  width: 180px;
-  height: auto;
-}
-
-/* Responsive tweaks: stack columns on smaller screens */
-@media (max-width: 900px) {
-  .nikotinmand-quiz-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .nikotinmand-quiz-section .nikotinmand-section {
-    flex: 0 0 auto;
-  }
-
-  .snus-container,
-  .cigarette-container {
-    min-height: 260px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-layout {
-    padding: 0 12px;
-  }
-
-  .nikotinmand-quiz-section .nikotinmand-section img {
-    width: 200px;
-  }
-
-  .teeth, .slider-container { width: 200px; }
-}
-
-/* Additional responsive tuning for tablets and small desktops */
-@media (min-width: 601px) and (max-width: 900px) {
-  .nikotinmand-quiz-section {
-    gap: 16px;
-  }
-
-  .nikotinmand-quiz-section .nikotinmand-section {
-    flex: 0 0 240px;
-  }
-
-  .nikotinmand-quiz-section .nikotinmand-section img {
-    width: 220px;
-  }
-
-  .snus-container,
-  .cigarette-container {
-    min-height: 300px;
-    padding: 14px;
-  }
-
-  .nikotinmand-quiz-section .quiz-section #quiz {
-    padding: 16px;
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1200px) {
-  .main-layout {
-    gap: 20px;
-  }
-
-  .nikotinmand-quiz-section .nikotinmand-section {
-    flex: 0 0 260px;
-  }
-
-  #smoker { width: 200px; }
-}
-
-/* Small screen final adjustments */
-@media (max-width: 380px) {
-  .nikotinmand-quiz-section .nikotinmand-section img {
-    width: 180px;
-  }
-
-  .teeth, .slider-container { width: 180px; }
-
-  #quiz { padding: 12px; }
 }
 
 img {
@@ -1678,203 +1565,3 @@ section { /* ungår brede layouts */
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* Final mobile overlay rules to ensure hamburger controls visibility */
-@media (max-width: 900px) {
-  /* hide default nav and show overlay when mobile-open is present */
-  .nav-links { display: none !important; }
-
-  .nav-links.mobile-open {
-    display: flex !important;
-    position: fixed !important;
-    /* start below the navbar so the logo remains visible */
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    max-width: 340px;
-    height: auto;
-    max-height: calc(100vh - 120px); /* leave some room above/below */
-    overflow-y: auto;
-    background: #98CDFB; /* solid blue panel */
-    justify-content: center; /* vertically center content inside panel */
-    align-items: flex-start; /* keep items left-aligned */
-    flex-direction: column;
-    gap: 22px; /* larger gap between main menu items */
-    z-index: 10002;
-    padding: 18px 20px;
-    border-radius: 12px;
-  }
-
-  .nav-links.mobile-open a,
-  .nav-links.mobile-open .tilmeld-btn {
-    background: transparent; /* blend with overlay */
-    color: #004076;
-    padding: 14px 18px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 420px;
-    text-align: left;
-    padding-left: 26px; /* shift text in from left edge */
-    font-size: 20px;
-    font-weight: 700;
-    box-shadow: none;
-    border: none;
-  }
-
-  .nav-links.mobile-open .dropdown-content {
-    display: flex; /* show nested items in overlay */
-    flex-direction: column;
-    gap: 0; /* no gap for maximum density */
-    background: transparent;
-    box-shadow: none;
-    padding-left: 0;
-  }
-
-  .nav-links.mobile-open .dropdown-content li {
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links.mobile-open .dropdown-content a {
-    background: transparent;
-    padding: 4px 12px; /* small vertical padding */
-    padding-left: 26px; /* align with main menu items */
-    margin: 0;
-    display: block;
-    text-align: left;
-    width: 90%;
-    max-width: 420px;
-    color: rgba(0,64,118,0.72); /* lighter than main options */
-    font-size: 15px; /* slightly larger while remaining tight */
-    font-weight: 500;
-    line-height: 1.0;
-    opacity: 0.95;
-  }
-}
-
-/* Move logo to left on small screens and adjust navbar layout */
-@media (max-width: 900px) {
-  .navbar {
-    justify-content: flex-start; /* place logo on left */
-    padding-left: 16px;
-  }
-
-  .logo {
-    order: 0;
-    margin-right: 8px;
-  }
-
-  .logo img {
-    height: 48px;
-    width: auto;
-  }
-
-  /* ensure hamburger stays on the right and doesn't overlap logo */
-  .hamburger {
-    right: 12px; /* slightly inset from edge */
-    top: 14px;
-  }
-}
-
-/* Final override: ensure footer blocks have left-aligned body text while titles remain centered on small screens */
-
-/* Strong global override to ensure footer content is left-aligned in all browsers
-   (keeps footer-title centered). This helps older browsers like IE/Edge that may
-   not apply the media-query as expected when testing responsive sizes. */
-@media (max-width: 1024px) {
-  /* layout: center the footer section blocks but make their inner text left-aligned
-     while keeping the titles centered. We center the inner text-block by giving
-     it a percentage width so its left edge sits closer to the title centerline. */
-  #footer-container .footer-info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* keep the block centered */
-    text-align: left !important; /* default for inner text */
-  }
-
-  /* keep the title centered */
-  #footer-container .footer-info-section .footer-title {
-    text-align: center !important;
-    width: 100%;
-  }
-
-  /* narrow the content block and left-align its text so it visually aligns
-     under the centered title */
-  #footer-container .footer-info-section .footer-content,
-  #footer-container .footer-info-section p,
-  #footer-container .footer-info-section li,
-  #footer-container .footer-info-section a {
-    /* ~0.5in further toward center: narrower fixed max-width + slightly smaller percentage */
-    width: 46%;
-    max-width: 284px; /* ~0.5in (48px) of extra inward shift relative to previous 380px */
-    text-align: left !important;
-    margin: 0 auto 6px auto;
-  }
-}
-
-/* Blueman — Ungedeler page: explicit sizing rules
-   This forces the blueman SVGs inside `.blueman-ungedeler` to be visibly larger
-   and overrides previous calc-based rules using !important. Sizes vary by breakpoint. */
-/* Blueman sizing: smaller values to match user request
-   Desktop: 320px, Tablet: 260px, Mobile: 180px */
-body.page-ungedeler .blueman-ungedeler svg {
-  width: auto !important;
-  height: 192px !important;     /* default / medium screens (144px + 0.5in) */
-  max-width: none !important;
-  display: block !important;
-}
-
-@media (min-width: 1025px) {
-  body.page-ungedeler .blueman-ungedeler svg {
-    height: 192px !important; /* desktop */
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  body.page-ungedeler .blueman-ungedeler svg {
-    height: 132px !important; /* tablet */
-  }
-}
-
-@media (max-width: 600px) {
-  body.page-ungedeler .blueman-ungedeler svg {
-    width: 92px !important; /* mobile */
-    height: auto !important;
-    max-width: 100% !important;
-  }
-}
-
-/* Ensure mini-heroes paragraph text is left-aligned and overrides other rules */
-/* removed global left-align forcing so mobile/tablet can keep centered text; see desktop media query below */
-
-/* Stoplinien section: force left-aligned text on all devices */
-.stoplinien-container,
-.stoplinien,
-.stoplinien h2,
-.stoplinien p,
-.stoplinien li,
-.stoplinien ul {
-  text-align: left !important;
-}
-
-/* Page-specific tweak: reduce gap between #reakud-title and the Lady-yeah image */
-/* Force the Ræk ud heading and image to sit very close together.
-   We use strong selectors and !important to override global h1 spacing. */
-h1#reakud-title {
-  margin-top: 8px !important;
-  padding-top: 0 !important;
-  margin-bottom: 4px !important; /* minimal bottom gap */
-}
-
-/* Pull the image up so it sits tightly under the heading. If this
-   is still too close, tell me and I'll reduce the negative value. */
-.Lady-yeah {
-  margin-top: -28px !important; /* move image up toward the title */
-  padding-bottom: 0 !important;
-}
-
-/* Be very specific in case other styles override */
-body #reakud-title { margin-top: 8px !important; padding-top: 0 !important; margin-bottom: 4px !important; }
-
-
