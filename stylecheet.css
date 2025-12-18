@@ -545,7 +545,7 @@ button:hover {
 .stats p {
   font-size: 1rem;
   margin: 2px;
-  font-weight: bold;
+    font-weight: 400; /* normal weight for bread text */
 }
 
 .game-container {
@@ -915,7 +915,7 @@ footer p {
   background-color: #004076;
   border-radius: 2px;
 }
-
+    font-weight: 400; /* ensure not bold */
 
 /* ===== RESET ===== */
     * {
@@ -1228,7 +1228,7 @@ footer p {
   h1 {
     font-size: 2rem;
     margin-top: 80px;
-  }
+      font-weight: 400; /* normal weight for bread text */
 
   h3 {
     font-size: 1.4rem;
