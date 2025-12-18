@@ -48,7 +48,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+  /* Center the block, but show only text (no box styling) */
+  margin: 0; /* remove horizontal offset */
+  text-align: left; /* ensure left-aligned text inside content */
+  align-items: flex-start; /* left-align flex children in column */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -279,13 +282,29 @@ body {
     padding: 20px;
     margin-top: 8%;
 }
+.stoplinien-container .stoplinien-container {
+  /* Remove inner card effect inside the blue section */
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
 .stoplinien {
     display: flex;
     flex-direction:column;
     justify-content: center;
     max-width: 700px;
     margin-left: 20px;
-    text-align: center;
+  text-align: left; /* ensure left-aligned text inside content */
+}
+.stoplinien h1,
+.stoplinien h2,
+.stoplinien h3,
+.stoplinien h4,
+.stoplinien h5,
+.stoplinien h6,
+.stoplinien p {
+  text-align: left; /* override global center alignment for headings and paragraphs */
 }
 .svg-container {
     display: flex;
@@ -679,6 +698,19 @@ flex: 0 0 300px;
 }
 .ungefortæller {
     max-width: 700px; 
+}
+
+/* Ensure text inside Ungefortaeller-container is left-aligned
+   while the overall section stays centered on the page */
+.Ungefortaeller-container .ungefortæller,
+.Ungefortaeller-container p,
+.Ungefortaeller-container h1,
+.Ungefortaeller-container h2,
+.Ungefortaeller-container h3,
+.Ungefortaeller-container h4,
+.Ungefortaeller-container h5,
+.Ungefortaeller-container h6 {
+  text-align: left;
 }
 .Collage-picture-container {
     width: 100%;
