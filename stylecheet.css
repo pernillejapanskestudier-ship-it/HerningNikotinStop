@@ -1183,10 +1183,19 @@ footer p {
       background-color: #c4e0fb;
     }
 
-    /* ===== FOOTER ===== */
+    /* Footer */
     footer {
       background-color: #a9d0f7;
-      padding: 40px 0;
+      padding: 40px 0 64px; /* extra bottom space for corner note */
+      position: relative;    /* allow corner note positioning */
+    }
+    .footer-note {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      font-size: 12px;
+      color: #004076;
+      font-weight: 600;
     }
 
     #footer-container {
