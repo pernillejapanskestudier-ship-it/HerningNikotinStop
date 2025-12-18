@@ -28,6 +28,9 @@ p {
   line-height: 48px;
 }
 
+/* Utility: specific 24px line-height for selected paragraphs */
+.lh-24 { line-height: 24px !important; }
+
 body {
     color: #F0F0F1;
 }
@@ -40,9 +43,10 @@ body {
 }
 .banner-image {
     width: 100%;
-    height: auto;
+  height: auto;
     display: block;
     z-index: 1;
+  object-fit: cover; /* allows fixed heights at smaller viewports without distortion */
 }
 .Tak-kort {
     position: absolute;
@@ -1197,14 +1201,65 @@ footer p {
 
     /* ===== MOBIL ===== */
     @media (max-width: 768px) {
+      /* Læs mere diagrams: show Title -> SVG -> Text on small screens */
+      .laesmere-page .diagram-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "svg"
+          "text";
+        row-gap: 12px;
+        width: 90%;
+      }
+      .laesmere-page .diagram-item svg { grid-area: svg; margin: 0 auto; }
+      .laesmere-page .diagram-item .diagram-text { grid-area: text; }
+      /* Ungefortaeller: reorder to Title -> Image -> Text on mobile */
+      .Ungefortaeller-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "title"
+          "image"
+          "text";
+        row-gap: 12px;
+      }
+      /* flatten the wrapper so its children can be placed in the grid */
+      .Ungefortaeller-container .ungefortæller { display: contents; }
+      .Ungefortaeller-container .ungefortæller h3 { grid-area: title; }
+      .Ungefortaeller-container .svg-container-UngeDeler { grid-area: image; justify-content: center; }
+      .Ungefortaeller-container .ungefortæller p { grid-area: text; }
+      /* Keep hamburger fixed in place and prevent it from moving when menu opens */
+      .navbar {
+        justify-content: flex-start;
+        padding: 10px 16px;
+        height: 80px;           /* fixed height so menu opens below */
+        flex-wrap: nowrap;
+        position: fixed;        /* ensure it's pinned at the top */
+        top: 0;
+        left: 0;
+        right: 0;
+      }
       /* Show hamburger button and hide links until menu is opened */
       .hamburger {
         display: flex;
-        margin-left: auto;
+        position: absolute;     /* pin to the right so it doesn't shift */
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
       }
       .nav-links {
         display: none;
         width: 100%;
+        position: absolute;     /* render dropdown below the navbar */
+        top: 80px;              /* exactly below the fixed navbar */
+        left: 0;
+        right: 0;
+        background-color: #98CDFB;
+        padding: 12px 20px;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1001;
       }
       .navbar.menu-open .nav-links {
         display: flex;
@@ -1249,6 +1304,20 @@ footer p {
 
     /* mobil css responsive */
     @media (max-width: 600px) {
+  /* Nudge hero title closer to the navbar on phones */
+  .Tak-kort {
+    top: 35%;
+  }
+  /* Keep navbar a fixed bar at the top even on small phones */
+  .navbar {
+    height: 80px;
+    flex-wrap: nowrap;
+  }
+  /* Make hero banner taller on mobile */
+  .banner-image {
+    height: 75vh;   /* larger banner on phones */
+    object-fit: cover;
+  }
 
   /* === TEKST === */
   h1 {
@@ -1350,6 +1419,75 @@ footer p {
 
 /* Tablet responsive */
 @media (min-width: 601px) and (max-width: 1024px) {
+  /* Læs mere diagrams: Title -> SVG -> Text on tablets */
+  .laesmere-page .diagram-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "svg"
+      "text";
+    row-gap: 14px;
+    width: 85%;
+  }
+  .laesmere-page .diagram-item svg { grid-area: svg; margin: 0 auto; }
+  .laesmere-page .diagram-item .diagram-text { grid-area: text; }
+  /* Ungefortaeller: reorder to Title -> Image -> Text on tablets */
+  .Ungefortaeller-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "text";
+    row-gap: 14px;
+  }
+  .Ungefortaeller-container .ungefortæller { display: contents; }
+  .Ungefortaeller-container .ungefortæller h3 { grid-area: title; }
+  .Ungefortaeller-container .svg-container-UngeDeler { grid-area: image; justify-content: center; }
+  .Ungefortaeller-container .ungefortæller p { grid-area: text; }
+  /* Nudge hero title a bit up on tablets */
+  .Tak-kort {
+    top: 45%;
+  }
+  /* Keep hamburger fixed in place and menu below bar on tablets */
+  .navbar {
+    justify-content: flex-start;
+    padding: 10px 20px;
+    height: 80px;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+  }
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0; right: 0;
+    background-color: #98CDFB;
+    padding: 14px 24px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+  .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  /* Make hero banner taller on tablets */
+  .banner-image {
+    height: 80vh;  /* larger banner on tablets */
+    object-fit: cover;
+  }
   /* Tablet: show hamburger and collapsible menu */
   .hamburger {
     display: flex;
