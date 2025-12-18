@@ -1012,6 +1012,10 @@ footer p {
     .game-card.medium-card {
       max-width: 900px;
     }
+    /* tighter space below the top quiz card on Test dig selv */
+    .test-dig-selv-page .game-card.medium-card {
+      margin-bottom: 24px; /* override default 60px bottom margin */
+    }
     /* narrower variant for specific cards */
     .game-card.narrow-card {
       max-width: 460px; /* tighten the box further */
@@ -1043,7 +1047,7 @@ footer p {
       align-items: stretch;      /* make both cards equal height */
       gap: 24px;                 /* space between the two cards */
       max-width: 900px;          /* match the quiz card width */
-      margin: 40px auto 40px;    /* reduce top gap above the row */
+      margin: 16px auto 32px;    /* tighter gap above, slightly reduced below */
     }
     /* Remove extra outer margins when cards are inside the row and ensure equal heights */
     .two-card-row .game-card {
