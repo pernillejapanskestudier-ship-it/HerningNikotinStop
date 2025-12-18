@@ -3,13 +3,13 @@
 <head>
     <!-- Lang = da betyder at man kan bruge de danske tegn (Æ, Ø, Å) -->
     <meta charset="UTF-8">
-    <!-- Prevents search engines from indexing this page -->
+    <!-- Forhindrer indeksering af siden -->
     <meta name="robots" content="noindex">
-    <!-- Makes the page responsive and mobile-friendly -->
+    <!-- Gør siden responsiv til mobil/tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tilmeldning</title>
 
-    <!-- Links to external stylesheet -->
+    <!-- Indlæser CSS-styling -->
     <link rel="stylesheet" href="stylecheet.css">
     
 <style>
@@ -99,14 +99,7 @@
         <label>Adresse:</label>
         <input type="text" name="adresse">
 
-        <!-- TTo kolonder ved siden af hindanen i formularen omkring By og Postnummer -->
-        <!--
-          `.row` og `.half` : CSS-klasser der gør at disse to felter ligger ved siden af hinanden.
-          - `.row` : bruges til at gruppere elementer horisontalt (side om side).
-          - `.half` : gør hvert element halvt bredt så de passer sammen på én linje.
-          
-          På små skærme (mobil) kan CSS gøre dem til fuld bredde igen med `flex-wrap`.
-        -->
+        <!-- To felter side om side (By og Postnummer) -->
         <div class="row">
             <div class="half">
                 <label>Post nummer:</label>

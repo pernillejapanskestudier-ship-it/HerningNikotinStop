@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 }
-/* End of CSS Reset */
+/* Slut på CSS-reset */
 
 /* ===== GLOBAL STYLES ===== */
 h1, h2, h3, h4, h5, h6 {
@@ -900,12 +900,12 @@ footer p {
 #Blok-diagram .st2 { fill: #5ea4da; }
 #Blok-diagram .st3 { fill: #3a7bbe; }
 #Blok-diagram .st4 { fill: #226eb6; }
-/* SVG styles end */
+/* Slut på SVG-styles */
 
 
-/* chatgbt løsning til test dig selv */
+/* Løsning til 'Test dig selv' */
 
-/* hamburger menu */
+/* Hamburger-menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -921,7 +921,7 @@ footer p {
 }
 
 
-/* ===== RESET ===== */
+/* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -945,7 +945,7 @@ footer p {
       text-align: center;
     }
 
-    /* ===== NAVBAR ===== */
+    /* Navigationsbar */
     .navbar {
       position: fixed;
       top: 0;
@@ -987,7 +987,7 @@ footer p {
       border: 2px solid #004076;
     }
 
-    /* ===== PAGE ===== */
+    /* Side */
     .test-dig-selv-page {
       padding-top: 140px;
     }
@@ -1199,7 +1199,7 @@ footer p {
       padding: 0 20px;
     }
 
-    /* ===== MOBIL ===== */
+    /* Mobil */
     @media (max-width: 768px) {
       /* Læs mere diagrams: show Title -> SVG -> Text on small screens */
       .laesmere-page .diagram-item {
@@ -1302,13 +1302,13 @@ footer p {
     }
 
 
-    /* mobil css responsive */
+    /* Mobil responsiv */
     @media (max-width: 600px) {
-  /* Nudge hero title closer to the navbar on phones */
+  /* Flyt hero-titel tættere på navbar (mobil) */
   .Tak-kort {
     top: 35%;
   }
-  /* Keep navbar a fixed bar at the top even on small phones */
+  /* Fast navbar øverst (mobil) */
   .navbar {
     height: 80px;
     flex-wrap: nowrap;
