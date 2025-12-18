@@ -140,7 +140,7 @@ body {
 .logo img {
     height: 60px;  /* Matcher højden på billedet */
     width: auto;
-    padding-top: 12%;
+    padding-top: 6%;
 }
 
 /* --- MENUPUNKTERNE --- */
@@ -248,6 +248,7 @@ body {
     gap: 20px;
     justify-content: center;
     align-items: center;
+  margin-top: 40px; /* add clear gap from the top section */
 }
 .aabne-tekst {
     display: flex;
@@ -258,7 +259,17 @@ body {
     display: flex;
     flex-direction: column; /*gør at teksten står under hinanden*/
     gap: 12px;
-    max-width: 400px; 
+  max-width: 700px; /* give the intro text more width */
+}
+/* Ensure intro text in mini-heroes is left-aligned */
+#mini-heroes-container .indhold h1,
+#mini-heroes-container .indhold h2,
+#mini-heroes-container .indhold h3,
+#mini-heroes-container .indhold h4,
+#mini-heroes-container .indhold h5,
+#mini-heroes-container .indhold h6,
+#mini-heroes-container .indhold p {
+  text-align: left;
 }
 .mini-heroes {
     display: flex;
@@ -987,6 +998,25 @@ footer {
       border-radius: 25px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
+    /* narrower variant for specific cards */
+    .game-card.narrow-card {
+      max-width: 460px; /* tighten the box further */
+      padding: 28px;    /* slightly tighter inner padding */
+    }
+    /* add breathing room below narrow-card titles */
+    .game-card.narrow-card h2 {
+      margin-bottom: 16px;
+    }
+    /* tighter spacing inside the narrow card */
+    .game-card.narrow-card .cigarette-container {
+      gap: 2px;
+    }
+    /* Stack snus items vertically inside narrow cards */
+    .game-card.narrow-card .snus-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
 
     .game-card.light {
       background-color: #E8F1FF;
@@ -1061,7 +1091,13 @@ footer {
       display: flex;
       align-items: center;
       gap: 40px;
-      justify-content: flex-start; /* align to the left side */
+        justify-content: flex-start; /* keep content left; image will push right */
+    }
+    .cigarette-container #smoker {
+      margin-left: auto; /* push the image to the right side */
+    }
+    .cigarette-container audio {
+      display: none; /* hide audio element to prevent layout gaps */
     }
     .cigarette-container p {
       text-align: left; /* left-align the game text */
