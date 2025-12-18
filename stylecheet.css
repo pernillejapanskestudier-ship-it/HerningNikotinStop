@@ -56,7 +56,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 8px; /* tighter spacing so the button is visible without scrolling */
     text-align: center;
 
     z-index: 2;  /* Dette gør at containeren med dette content i liger ovenpå banneret. Det er basicly 'layers' */
@@ -67,14 +67,16 @@ body {
     font-size: 5rem;
     font-weight: bold;
     font-style: italic;
+  margin-bottom: 0; /* reduce extra space below the title */
 
     z-index: 2;
 }
 #Hero-title-undertekst {
     font-family: Jakarta Sans, sans-serif;
     color: #DCEEFE;
-    font-size: 2rem;
+  font-size: 1.25rem; /* slightly smaller subtitle */
     font-style: italic;
+  margin-bottom: 4px; /* reduce space below subtitle */
 }
 
 /* Navigationsbaren */
@@ -817,7 +819,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
+  justify-content: center;
     padding: 0 16%;
     width: 100%;
 }
