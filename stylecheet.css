@@ -1197,6 +1197,28 @@ footer p {
 
     /* ===== MOBIL ===== */
     @media (max-width: 768px) {
+      /* Show hamburger button and hide links until menu is opened */
+      .hamburger {
+        display: flex;
+        margin-left: auto;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+      }
+      .navbar.menu-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      /* Make dropdowns static and visible under their parent in mobile */
+      .dropdown-content {
+        position: static;
+        display: block;
+        box-shadow: none;
+        background-color: transparent;
+        padding-left: 12px;
+      }
       .game-content,
       .cigarette-container {
         flex-direction: column;
@@ -1232,7 +1254,8 @@ footer p {
   h1 {
     font-size: 2rem;
     margin-top: 80px;
-      font-weight: 400; /* normal weight for bread text */
+    font-weight: 400; /* normal weight for bread text */
+  }
 
   h3 {
     font-size: 1.4rem;
@@ -1327,6 +1350,27 @@ footer p {
 
 /* Tablet responsive */
 @media (min-width: 601px) and (max-width: 1024px) {
+  /* Tablet: show hamburger and collapsible menu */
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+  .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .dropdown-content {
+    position: static;
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 12px;
+  }
 
   h1 {
     font-size: 2.5rem;
