@@ -665,12 +665,17 @@ button:hover {
     font-weight: 700;
     font-style: italic;
     text-align: center;
+  line-height: 24px; /* tighter heading leading inside cards */
 }
 .card-text {
     font-size: 0.95rem;     /* samme prencip, 32/16=2rem */
     margin-bottom: 12px;
     color: #004076;
-  line-height: 48px;
+  line-height: 24px; /* override global leading for card paragraphs */
+}
+/* Ensure any paragraph inside a card uses compact leading */
+.card-body p { 
+  line-height: 24px; 
 }
 .ungedeler-kort-logo img {
   width: auto;          /* prevent squashing horizontally */
@@ -813,6 +818,11 @@ footer {
     align-items: flex-start;
     width: 100%;
     padding: 0 20px;
+}
+/* Ensure footer body text is left-aligned regardless of global centering */
+footer p {
+  text-align: left;
+  line-height: 24px; /* override global 48px for footer bread text */
 }
 /* SVG styles start for Læs mere */
 .laesmere-page,
@@ -998,6 +1008,10 @@ footer {
       border-radius: 25px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
+    /* medium width variant for quiz card to better fit contents */
+    .game-card.medium-card {
+      max-width: 900px;
+    }
     /* narrower variant for specific cards */
     .game-card.narrow-card {
       max-width: 460px; /* tighten the box further */
@@ -1020,6 +1034,28 @@ footer {
 
     .game-card.light {
       background-color: #E8F1FF;
+    }
+
+    /* Row to place two narrow cards side by side and centered */
+    .two-card-row {
+      display: flex;
+      justify-content: center;   /* center the pair as a group */
+      align-items: stretch;      /* make both cards equal height */
+      gap: 24px;                 /* space between the two cards */
+      max-width: 900px;          /* match the quiz card width */
+      margin: 40px auto 40px;    /* reduce top gap above the row */
+    }
+    /* Remove extra outer margins when cards are inside the row and ensure equal heights */
+    .two-card-row .game-card {
+      margin: 0;
+      align-self: stretch;
+      display: flex;             /* allow inner content to layout vertically */
+      flex-direction: column;
+      flex: 0 1 calc(50% - 12px); /* split the row width evenly minus half the gap */
+    }
+    /* allow narrow cards inside the row to expand to half width rather than fixed max */
+    .two-card-row .game-card.narrow-card {
+      max-width: none;
     }
 
     .game-content {
@@ -1170,6 +1206,17 @@ footer {
       .snus-container {
         flex-direction: column;
         align-items: center;
+      }
+      /* Stack the two cards on small screens */
+      .two-card-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 95vw; /* make row comfortably fit small screens */
+      }
+      .two-card-row .game-card {
+        flex: 1 1 100%;
+        width: 100%;
       }
     }
 
